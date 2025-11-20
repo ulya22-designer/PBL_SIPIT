@@ -44,7 +44,7 @@ Partial Class Form1
         ' 
         Button2.BackColor = SystemColors.Desktop
         Button2.Cursor = Cursors.IBeam
-        Button2.Font = New Font("Montagu Slab 144pt", 18.0F)
+        Button2.Font = New Font("Montagu Slab 144pt", 18F)
         Button2.ForeColor = SystemColors.ButtonHighlight
         Button2.Location = New Point(112, 359)
         Button2.Name = "Button2"
@@ -57,7 +57,7 @@ Partial Class Form1
         ' 
         Button1.BackColor = Color.SlateBlue
         Button1.Cursor = Cursors.IBeam
-        Button1.Font = New Font("Montagu Slab 144pt", 18.0F)
+        Button1.Font = New Font("Montagu Slab 144pt", 18F)
         Button1.ForeColor = SystemColors.ButtonHighlight
         Button1.Location = New Point(112, 308)
         Button1.Name = "Button1"
@@ -80,13 +80,13 @@ Partial Class Form1
         Label3.Font = New Font("Cooper Black", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(262, 179)
         Label3.Name = "Label3"
-        Label3.Size = New Size(178, 61)
+        Label3.Size = New Size(141, 61)
         Label3.TabIndex = 10
-        Label3.Text = "SIPIT"
+        Label3.Text = "SIPI"
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(720, 450)
