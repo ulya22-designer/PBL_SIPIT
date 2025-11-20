@@ -68,7 +68,7 @@ Partial Class Form1
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Location = New Point(287, 48)
+        PictureBox2.Location = New Point(280, 52)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(123, 100)
         PictureBox2.TabIndex = 11
@@ -78,11 +78,11 @@ Partial Class Form1
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Cooper Black", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(262, 179)
+        Label3.Location = New Point(255, 181)
         Label3.Name = "Label3"
-        Label3.Size = New Size(141, 61)
+        Label3.Size = New Size(178, 61)
         Label3.TabIndex = 10
-        Label3.Text = "SIPI"
+        Label3.Text = "SIPIT"
         ' 
         ' Form1
         ' 
