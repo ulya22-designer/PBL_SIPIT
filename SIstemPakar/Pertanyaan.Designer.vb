@@ -24,7 +24,6 @@ Partial Class Pertanyaan
     Private Sub InitializeComponent()
         Button1 = New Button()
         Button2 = New Button()
-        Button3 = New Button()
         Button4 = New Button()
         Button5 = New Button()
         Button6 = New Button()
@@ -33,6 +32,9 @@ Partial Class Pertanyaan
         Label2 = New Label()
         PictureBox1 = New PictureBox()
         Label1 = New Label()
+        Button3 = New Button()
+        Button9 = New Button()
+        Button10 = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -62,17 +64,6 @@ Partial Class Pertanyaan
         Button2.TabIndex = 15
         Button2.Text = "TIDAK"
         Button2.UseVisualStyleBackColor = False
-        ' 
-        ' Button3
-        ' 
-        Button3.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.Location = New Point(666, 299)
-        Button3.Margin = New Padding(3, 4, 3, 4)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(49, 52)
-        Button3.TabIndex = 18
-        Button3.Text = ">"
-        Button3.UseVisualStyleBackColor = True
         ' 
         ' Button4
         ' 
@@ -133,7 +124,7 @@ Partial Class Pertanyaan
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(311, 299)
+        Label2.Location = New Point(296, 312)
         Label2.Name = "Label2"
         Label2.Size = New Size(156, 29)
         Label2.TabIndex = 24
@@ -144,7 +135,8 @@ Partial Class Pertanyaan
         PictureBox1.Location = New Point(22, 24)
         PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(47, 39)
+        PictureBox1.Size = New Size(69, 65)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 26
         PictureBox1.TabStop = False
         ' 
@@ -152,17 +144,50 @@ Partial Class Pertanyaan
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(75, 28)
+        Label1.Location = New Point(91, 48)
         Label1.Name = "Label1"
         Label1.Size = New Size(110, 25)
         Label1.TabIndex = 25
         Label1.Text = "Username"
+        ' 
+        ' Button3
+        ' 
+        Button3.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.Location = New Point(666, 299)
+        Button3.Margin = New Padding(3, 4, 3, 4)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(49, 52)
+        Button3.TabIndex = 18
+        Button3.Text = ">"
+        Button3.UseVisualStyleBackColor = True
+        ' 
+        ' Button9
+        ' 
+        Button9.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button9.Location = New Point(91, 299)
+        Button9.Margin = New Padding(3, 4, 3, 4)
+        Button9.Name = "Button9"
+        Button9.Size = New Size(49, 52)
+        Button9.TabIndex = 27
+        Button9.Text = "<"
+        Button9.UseVisualStyleBackColor = True
+        ' 
+        ' Button10
+        ' 
+        Button10.Location = New Point(335, 528)
+        Button10.Name = "Button10"
+        Button10.Size = New Size(94, 29)
+        Button10.TabIndex = 28
+        Button10.Text = "Submit"
+        Button10.UseVisualStyleBackColor = True
         ' 
         ' Pertanyaan
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(823, 600)
+        Controls.Add(Button10)
+        Controls.Add(Button9)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Controls.Add(Label2)
@@ -184,7 +209,6 @@ Partial Class Pertanyaan
     End Sub
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
@@ -193,4 +217,7 @@ Partial Class Pertanyaan
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button10 As Button
 End Class

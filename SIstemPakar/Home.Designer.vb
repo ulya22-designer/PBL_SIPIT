@@ -37,7 +37,7 @@ Partial Class Home
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(85, 36)
+        Label1.Location = New Point(101, 54)
         Label1.Name = "Label1"
         Label1.Size = New Size(110, 25)
         Label1.TabIndex = 0
@@ -48,7 +48,7 @@ Partial Class Home
         PictureBox1.Location = New Point(31, 32)
         PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(47, 39)
+        PictureBox1.Size = New Size(64, 68)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False

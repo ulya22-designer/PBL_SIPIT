@@ -48,7 +48,7 @@ Public Class Home
     ' ========== TOMBOL MULAI TES ==========
     Private Sub btnMulaiTes_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim p As New pertanyaan()
-        'p.userId = Me.userId   ' kirim userId ke halaman pertanyaan
+        'p.userId = CurrentUserID   ' kirim userId ke halaman pertanyaan
         p.Show()
         Me.Hide()
     End Sub

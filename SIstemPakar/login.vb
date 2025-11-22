@@ -35,18 +35,32 @@ Public Class login
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
 
                 If rd.Read() Then
+
+                    ' -----------------------------
+                    ' SIMPAN DATA USER KE GLOBAL
+                    ' -----------------------------
+                    CurrentUserID = CInt(rd("user_id"))
+                    CurrentUserName = rd("nama").ToString()
+
+                    If Not IsDBNull(rd("foto")) Then
+                        CurrentUserFoto = CType(rd("foto"), Byte())
+                    Else
+                        CurrentUserFoto = Nothing
+                    End If
+                    ' -----------------------------
+
                     MessageBox.Show("Login berhasil! Selamat datang " & username, "Sukses",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' Buka halaman berikutnya
                     Dim f As New Home()
-                    f.userId = CInt(rd("user_id"))
+                    f.userId = CurrentUserID
                     f.Show()
                     Me.Hide()
 
                 Else
                     MessageBox.Show("Username atau password salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+
 
             End Using
         End Using
