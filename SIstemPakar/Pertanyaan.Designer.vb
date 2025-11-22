@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form5
+Partial Class Pertanyaan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -40,11 +40,12 @@ Partial Class Form5
         ' 
         Button1.BackColor = Color.SlateBlue
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Montagu Slab 144pt", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(80, 337)
+        Button1.Location = New Point(91, 449)
+        Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
-        Button1.Size = New Size(121, 47)
+        Button1.Size = New Size(138, 63)
         Button1.TabIndex = 14
         Button1.Text = "YA"
         Button1.UseVisualStyleBackColor = False
@@ -52,71 +53,78 @@ Partial Class Form5
         ' Button2
         ' 
         Button2.BackColor = SystemColors.Desktop
-        Button2.Font = New Font("Montagu Slab 144pt", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(471, 337)
+        Button2.Location = New Point(538, 449)
+        Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
-        Button2.Size = New Size(155, 47)
+        Button2.Size = New Size(177, 63)
         Button2.TabIndex = 15
         Button2.Text = "TIDAK"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' Button3
         ' 
-        Button3.Font = New Font("Montagu Slab 144pt", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.Location = New Point(583, 224)
+        Button3.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.Location = New Point(666, 299)
+        Button3.Margin = New Padding(3, 4, 3, 4)
         Button3.Name = "Button3"
-        Button3.Size = New Size(43, 39)
+        Button3.Size = New Size(49, 52)
         Button3.TabIndex = 18
         Button3.Text = ">"
         Button3.UseVisualStyleBackColor = True
         ' 
         ' Button4
         ' 
-        Button4.Font = New Font("Montagu Slab 144pt", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button4.Location = New Point(80, 109)
+        Button4.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button4.Location = New Point(91, 145)
+        Button4.Margin = New Padding(3, 4, 3, 4)
         Button4.Name = "Button4"
-        Button4.Size = New Size(48, 39)
+        Button4.Size = New Size(55, 52)
         Button4.TabIndex = 19
         Button4.Text = "01"
         Button4.UseVisualStyleBackColor = True
         ' 
         ' Button5
         ' 
-        Button5.Font = New Font("Montagu Slab 144pt", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button5.Location = New Point(192, 109)
+        Button5.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button5.Location = New Point(219, 145)
+        Button5.Margin = New Padding(3, 4, 3, 4)
         Button5.Name = "Button5"
-        Button5.Size = New Size(52, 39)
+        Button5.Size = New Size(59, 52)
         Button5.TabIndex = 20
         Button5.Text = "02"
         Button5.UseVisualStyleBackColor = True
         ' 
         ' Button6
         ' 
-        Button6.Font = New Font("Montagu Slab 144pt", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button6.Location = New Point(316, 109)
+        Button6.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button6.Location = New Point(361, 145)
+        Button6.Margin = New Padding(3, 4, 3, 4)
         Button6.Name = "Button6"
-        Button6.Size = New Size(50, 39)
+        Button6.Size = New Size(57, 52)
         Button6.TabIndex = 21
         Button6.Text = "03"
         Button6.UseVisualStyleBackColor = True
         ' 
         ' Button7
         ' 
-        Button7.Font = New Font("Montagu Slab 144pt", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button7.Location = New Point(575, 109)
+        Button7.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button7.Location = New Point(657, 145)
+        Button7.Margin = New Padding(3, 4, 3, 4)
         Button7.Name = "Button7"
-        Button7.Size = New Size(51, 39)
+        Button7.Size = New Size(58, 52)
         Button7.TabIndex = 23
         Button7.Text = "05"
         Button7.UseVisualStyleBackColor = True
         ' 
         ' Button8
         ' 
-        Button8.Font = New Font("Montagu Slab 144pt", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button8.Location = New Point(441, 109)
+        Button8.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button8.Location = New Point(504, 145)
+        Button8.Margin = New Padding(3, 4, 3, 4)
         Button8.Name = "Button8"
-        Button8.Size = New Size(59, 39)
+        Button8.Size = New Size(67, 52)
         Button8.TabIndex = 22
         Button8.Text = "04"
         Button8.UseVisualStyleBackColor = True
@@ -124,36 +132,37 @@ Partial Class Form5
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Montagu Slab 144pt Medium", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(272, 224)
+        Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
+        Label2.Location = New Point(311, 299)
         Label2.Name = "Label2"
-        Label2.Size = New Size(133, 28)
+        Label2.Size = New Size(156, 29)
         Label2.TabIndex = 24
         Label2.Text = "Pertanyaan?"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(19, 18)
+        PictureBox1.Location = New Point(22, 24)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(41, 29)
+        PictureBox1.Size = New Size(47, 39)
         PictureBox1.TabIndex = 26
         PictureBox1.TabStop = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Montagu Slab 144pt Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(66, 21)
+        Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(75, 28)
         Label1.Name = "Label1"
-        Label1.Size = New Size(90, 23)
+        Label1.Size = New Size(110, 25)
         Label1.TabIndex = 25
         Label1.Text = "Username"
         ' 
-        ' Form5
+        ' Pertanyaan
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(720, 450)
+        ClientSize = New Size(823, 600)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Controls.Add(Label2)
@@ -165,7 +174,9 @@ Partial Class Form5
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
-        Name = "Form5"
+        Margin = New Padding(3, 4, 3, 4)
+        Name = "Pertanyaan"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Questions"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

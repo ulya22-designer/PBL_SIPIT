@@ -40,6 +40,7 @@ Public Class login
 
                     ' Buka halaman berikutnya
                     Dim f As New Home()
+                    f.userId = CInt(rd("user_id"))
                     f.Show()
                     Me.Hide()
 
