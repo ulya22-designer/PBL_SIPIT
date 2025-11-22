@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class landingPage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -34,7 +34,7 @@ Partial Class Form1
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(128, 339)
+        Label2.Location = New Point(142, 332)
         Label2.Name = "Label2"
         Label2.Size = New Size(537, 31)
         Label2.TabIndex = 14
@@ -46,7 +46,7 @@ Partial Class Form1
         Button2.Cursor = Cursors.IBeam
         Button2.Font = New Font("Microsoft Sans Serif", 18.0F)
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(128, 479)
+        Button2.Location = New Point(142, 472)
         Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
         Button2.Size = New Size(534, 51)
@@ -60,7 +60,7 @@ Partial Class Form1
         Button1.Cursor = Cursors.IBeam
         Button1.Font = New Font("Microsoft Sans Serif", 18.0F)
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(128, 411)
+        Button1.Location = New Point(142, 393)
         Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
         Button1.Size = New Size(534, 51)
@@ -70,7 +70,7 @@ Partial Class Form1
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Location = New Point(328, 64)
+        PictureBox2.Location = New Point(342, 57)
         PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(141, 133)
@@ -81,15 +81,15 @@ Partial Class Form1
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(299, 239)
+        Label3.Location = New Point(313, 232)
         Label3.Name = "Label3"
         Label3.Size = New Size(201, 76)
         Label3.TabIndex = 10
         Label3.Text = "SIPIT"
         ' 
-        ' Form1
+        ' landingPage
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(823, 600)
@@ -99,7 +99,8 @@ Partial Class Form1
         Controls.Add(PictureBox2)
         Controls.Add(Label3)
         Margin = New Padding(3, 4, 3, 4)
-        Name = "Form1"
+        Name = "landingPage"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Landing"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
