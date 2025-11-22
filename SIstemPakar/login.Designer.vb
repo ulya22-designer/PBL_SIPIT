@@ -38,61 +38,65 @@ Partial Class login
         ' 
         ' ContextMenuStrip1
         ' 
+        ContextMenuStrip1.ImageScalingSize = New Size(20, 20)
         ContextMenuStrip1.Name = "ContextMenuStrip1"
         ContextMenuStrip1.Size = New Size(61, 4)
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Cooper Black", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(198, 168)
+        Label1.Font = New Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(226, 224)
         Label1.Name = "Label1"
-        Label1.Size = New Size(145, 42)
+        Label1.Size = New Size(170, 54)
         Label1.TabIndex = 1
         Label1.Text = "LOGIN"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Montagu Slab 144pt Medium", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(85, 253)
+        Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
+        Label2.Location = New Point(97, 337)
         Label2.Name = "Label2"
-        Label2.Size = New Size(110, 28)
+        Label2.Size = New Size(132, 29)
         Label2.TabIndex = 2
         Label2.Text = "Username"
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(256, 258)
+        TextBox1.Location = New Point(293, 344)
+        TextBox1.Margin = New Padding(3, 4, 3, 4)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(191, 23)
+        TextBox1.Size = New Size(218, 27)
         TextBox1.TabIndex = 4
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(256, 310)
+        TextBox2.Location = New Point(293, 413)
+        TextBox2.Margin = New Padding(3, 4, 3, 4)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(191, 23)
+        TextBox2.Size = New Size(218, 27)
         TextBox2.TabIndex = 5
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Montagu Slab 144pt Medium", 14.25F, FontStyle.Bold)
-        Label3.Location = New Point(85, 305)
+        Label3.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
+        Label3.Location = New Point(97, 407)
         Label3.Name = "Label3"
-        Label3.Size = New Size(105, 28)
+        Label3.Size = New Size(128, 29)
         Label3.TabIndex = 6
         Label3.Text = "Password"
         ' 
         ' Button1
         ' 
         Button1.BackColor = Color.SlateBlue
-        Button1.Font = New Font("Montagu Slab 144pt", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(85, 383)
+        Button1.Location = New Point(97, 511)
+        Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
-        Button1.Size = New Size(362, 31)
+        Button1.Size = New Size(414, 41)
         Button1.TabIndex = 7
         Button1.Text = "Login"
         Button1.UseVisualStyleBackColor = False
@@ -100,11 +104,12 @@ Partial Class login
         ' Button3
         ' 
         Button3.BackColor = SystemColors.Desktop
-        Button3.Font = New Font("Montagu Slab 144pt", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button3.ForeColor = SystemColors.ButtonHighlight
-        Button3.Location = New Point(85, 420)
+        Button3.Location = New Point(97, 560)
+        Button3.Margin = New Padding(3, 4, 3, 4)
         Button3.Name = "Button3"
-        Button3.Size = New Size(362, 31)
+        Button3.Size = New Size(414, 41)
         Button3.TabIndex = 9
         Button3.Text = "Keluar"
         Button3.UseVisualStyleBackColor = False
@@ -112,27 +117,29 @@ Partial Class login
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Montagu Slab 144pt", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.Cursor = Cursors.Hand
+        Label4.Font = New Font("Microsoft Sans Serif", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = SystemColors.HotTrack
-        Label4.Location = New Point(315, 469)
+        Label4.Location = New Point(360, 625)
         Label4.Name = "Label4"
-        Label4.Size = New Size(132, 19)
+        Label4.Size = New Size(155, 20)
         Label4.TabIndex = 11
         Label4.Text = "Belum punya akun?"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(207, 56)
+        PictureBox1.Location = New Point(237, 75)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(123, 100)
+        PictureBox1.Size = New Size(141, 133)
         PictureBox1.TabIndex = 12
         PictureBox1.TabStop = False
         ' 
-        ' Form2
+        ' login
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(546, 547)
+        ClientSize = New Size(624, 729)
         Controls.Add(PictureBox1)
         Controls.Add(Label4)
         Controls.Add(Button3)
@@ -142,7 +149,9 @@ Partial Class login
         Controls.Add(TextBox1)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Name = "Form2"
+        Margin = New Padding(3, 4, 3, 4)
+        Name = "login"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

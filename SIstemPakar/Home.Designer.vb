@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form4
+Partial Class Home
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -109,7 +109,7 @@ Partial Class Form4
         Label3.TabIndex = 5
         Label3.Text = "SIPIT"
         ' 
-        ' Form4
+        ' Home
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
@@ -122,7 +122,8 @@ Partial Class Form4
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Margin = New Padding(3, 4, 3, 4)
-        Name = "Form4"
+        Name = "Home"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Home"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()

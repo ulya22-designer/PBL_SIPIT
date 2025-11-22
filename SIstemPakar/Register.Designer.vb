@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form3
+Partial Class Register
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,10 +23,6 @@ Partial Class Form3
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        Label3 = New Label()
-        Label5 = New Label()
-        ComboBox1 = New ComboBox()
         PictureBox1 = New PictureBox()
         Label2 = New Label()
         Label4 = New Label()
@@ -49,49 +45,13 @@ Partial Class Form3
         TextBox1.Size = New Size(269, 27)
         TextBox1.TabIndex = 6
         ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(264, 376)
-        TextBox2.Margin = New Padding(3, 4, 3, 4)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(269, 27)
-        TextBox2.TabIndex = 8
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label3.Location = New Point(90, 369)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(60, 29)
-        Label3.TabIndex = 7
-        Label3.Text = "NIM"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label5.Location = New Point(90, 443)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(79, 29)
-        Label5.TabIndex = 11
-        Label5.Text = "Email"
-        ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(264, 443)
-        ComboBox1.Margin = New Padding(3, 4, 3, 4)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(269, 28)
-        ComboBox1.TabIndex = 12
-        ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(264, 76)
+        PictureBox1.Location = New Point(239, 41)
         PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(101, 89)
+        PictureBox1.Size = New Size(140, 136)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 16
         PictureBox1.TabStop = False
         ' 
@@ -99,7 +59,7 @@ Partial Class Form3
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(90, 301)
+        Label2.Location = New Point(90, 311)
         Label2.Name = "Label2"
         Label2.Size = New Size(81, 29)
         Label2.TabIndex = 5
@@ -109,7 +69,7 @@ Partial Class Form3
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label4.Location = New Point(90, 513)
+        Label4.Location = New Point(90, 386)
         Label4.Name = "Label4"
         Label4.Size = New Size(128, 29)
         Label4.TabIndex = 17
@@ -117,7 +77,7 @@ Partial Class Form3
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(264, 523)
+        TextBox3.Location = New Point(264, 386)
         TextBox3.Margin = New Padding(3, 4, 3, 4)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(269, 27)
@@ -128,7 +88,7 @@ Partial Class Form3
         Button3.BackColor = SystemColors.Desktop
         Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button3.ForeColor = SystemColors.ButtonHighlight
-        Button3.Location = New Point(90, 720)
+        Button3.Location = New Point(90, 583)
         Button3.Margin = New Padding(3, 4, 3, 4)
         Button3.Name = "Button3"
         Button3.Size = New Size(443, 41)
@@ -141,7 +101,7 @@ Partial Class Form3
         Button1.BackColor = Color.SlateBlue
         Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(90, 671)
+        Button1.Location = New Point(90, 534)
         Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
         Button1.Size = New Size(443, 41)
@@ -162,9 +122,10 @@ Partial Class Form3
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.Cursor = Cursors.Hand
         Label6.Font = New Font("Microsoft Sans Serif", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = SystemColors.HotTrack
-        Label6.Location = New Point(383, 787)
+        Label6.Location = New Point(383, 650)
         Label6.Name = "Label6"
         Label6.Size = New Size(154, 20)
         Label6.TabIndex = 22
@@ -183,7 +144,7 @@ Partial Class Form3
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label8.Location = New Point(90, 588)
+        Label8.Location = New Point(90, 460)
         Label8.Name = "Label8"
         Label8.Size = New Size(135, 29)
         Label8.TabIndex = 24
@@ -192,7 +153,7 @@ Partial Class Form3
         ' Button2
         ' 
         Button2.Font = New Font("Microsoft Sans Serif", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button2.Location = New Point(264, 593)
+        Button2.Location = New Point(264, 456)
         Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
         Button2.Size = New Size(270, 33)
@@ -200,11 +161,11 @@ Partial Class Form3
         Button2.Text = "Upload Foto (4:3)"
         Button2.UseVisualStyleBackColor = True
         ' 
-        ' Form3
+        ' Register
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(624, 913)
+        ClientSize = New Size(624, 728)
         Controls.Add(Button2)
         Controls.Add(Label8)
         Controls.Add(Label7)
@@ -215,14 +176,10 @@ Partial Class Form3
         Controls.Add(TextBox3)
         Controls.Add(Label4)
         Controls.Add(PictureBox1)
-        Controls.Add(ComboBox1)
-        Controls.Add(Label5)
-        Controls.Add(TextBox2)
-        Controls.Add(Label3)
         Controls.Add(TextBox1)
         Controls.Add(Label2)
         Margin = New Padding(3, 4, 3, 4)
-        Name = "Form3"
+        Name = "Register"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Register"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -230,10 +187,6 @@ Partial Class Form3
         PerformLayout()
     End Sub
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
