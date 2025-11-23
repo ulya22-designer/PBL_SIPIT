@@ -124,7 +124,7 @@ Partial Class Pertanyaan
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(296, 312)
+        Label2.Location = New Point(201, 312)
         Label2.Name = "Label2"
         Label2.Size = New Size(156, 29)
         Label2.TabIndex = 24

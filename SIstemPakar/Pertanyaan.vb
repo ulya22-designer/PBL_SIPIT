@@ -136,6 +136,7 @@ Public Class Pertanyaan
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
+        Label2.MaximumSize = New Size(400, 0)
+        Label2.TextAlign = ContentAlignment.MiddleCenter
     End Sub
 End Class
