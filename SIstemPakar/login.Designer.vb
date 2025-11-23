@@ -46,7 +46,7 @@ Partial Class login
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(226, 224)
+        Label1.Location = New Point(222, 239)
         Label1.Name = "Label1"
         Label1.Size = New Size(170, 54)
         Label1.TabIndex = 1
