@@ -44,10 +44,18 @@ Public Class Pertanyaan
     '=============================
     Private Sub TampilkanPertanyaan(index As Integer)
         currentIndex = index
+
+        ' --- Pengaturan Tampilan Label Pertanyaan ---
+        Label2.MaximumSize = New Size(700, 0)   ' Lebar maksimum agar text membungkus
+        Label2.AutoSize = True
+        Label2.TextAlign = ContentAlignment.MiddleCenter
+
         Label2.Text = listPertanyaan(index)
+
         UpdateNavigasi()
         UpdateNomorButton()
     End Sub
+
 
     ' MENONAKTIFKAN / MENGAKTIFKAN BUTTON GESER
     Private Sub UpdateNavigasi()
@@ -129,14 +137,9 @@ Public Class Pertanyaan
         Next
 
         ' buka halaman hasil
-        Dim f As New Hasil()
+        Dim f As New Hasil(jawaban, CurrentUserID)
         f.Show()
         Me.Hide()
 
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-        Label2.MaximumSize = New Size(400, 0)
-        Label2.TextAlign = ContentAlignment.MiddleCenter
     End Sub
 End Class

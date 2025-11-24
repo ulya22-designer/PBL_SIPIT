@@ -22,6 +22,7 @@ Partial Class Hasil
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hasil))
         PictureBox1 = New PictureBox()
         Label1 = New Label()
         Label3 = New Label()
@@ -29,6 +30,8 @@ Partial Class Hasil
         PictureBox2 = New PictureBox()
         Button2 = New Button()
         Button1 = New Button()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
+        PrintDocument1 = New Printing.PrintDocument()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -38,7 +41,8 @@ Partial Class Hasil
         PictureBox1.Location = New Point(16, 23)
         PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(47, 39)
+        PictureBox1.Size = New Size(73, 65)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 28
         PictureBox1.TabStop = False
         ' 
@@ -46,7 +50,7 @@ Partial Class Hasil
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(70, 27)
+        Label1.Location = New Point(95, 43)
         Label1.Name = "Label1"
         Label1.Size = New Size(110, 25)
         Label1.TabIndex = 27
@@ -66,7 +70,7 @@ Partial Class Hasil
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(304, 371)
+        Label2.Location = New Point(130, 374)
         Label2.Name = "Label2"
         Label2.Size = New Size(188, 29)
         Label2.TabIndex = 30
@@ -109,6 +113,19 @@ Partial Class Hasil
         Button1.Text = "Cetak Hasil"
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
+        ' PrintDocument1
+        ' 
+        ' 
         ' Hasil
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -138,4 +155,6 @@ Partial Class Hasil
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class
