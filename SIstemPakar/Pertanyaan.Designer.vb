@@ -44,10 +44,9 @@ Partial Class Pertanyaan
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(577, 425)
-        Button1.Margin = New Padding(3, 4, 3, 4)
+        Button1.Location = New Point(768, 426)
         Button1.Name = "Button1"
-        Button1.Size = New Size(138, 63)
+        Button1.Size = New Size(121, 47)
         Button1.TabIndex = 14
         Button1.Text = "YA"
         Button1.UseVisualStyleBackColor = False
@@ -57,10 +56,9 @@ Partial Class Pertanyaan
         Button2.BackColor = SystemColors.Desktop
         Button2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(91, 425)
-        Button2.Margin = New Padding(3, 4, 3, 4)
+        Button2.Location = New Point(80, 426)
         Button2.Name = "Button2"
-        Button2.Size = New Size(177, 63)
+        Button2.Size = New Size(155, 47)
         Button2.TabIndex = 15
         Button2.Text = "TIDAK"
         Button2.UseVisualStyleBackColor = False
@@ -68,10 +66,9 @@ Partial Class Pertanyaan
         ' Button4
         ' 
         Button4.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button4.Location = New Point(91, 145)
-        Button4.Margin = New Padding(3, 4, 3, 4)
+        Button4.Location = New Point(80, 109)
         Button4.Name = "Button4"
-        Button4.Size = New Size(55, 52)
+        Button4.Size = New Size(48, 39)
         Button4.TabIndex = 19
         Button4.Text = "01"
         Button4.UseVisualStyleBackColor = True
@@ -79,10 +76,9 @@ Partial Class Pertanyaan
         ' Button5
         ' 
         Button5.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button5.Location = New Point(219, 145)
-        Button5.Margin = New Padding(3, 4, 3, 4)
+        Button5.Location = New Point(248, 109)
         Button5.Name = "Button5"
-        Button5.Size = New Size(59, 52)
+        Button5.Size = New Size(52, 39)
         Button5.TabIndex = 20
         Button5.Text = "02"
         Button5.UseVisualStyleBackColor = True
@@ -90,10 +86,9 @@ Partial Class Pertanyaan
         ' Button6
         ' 
         Button6.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button6.Location = New Point(361, 145)
-        Button6.Margin = New Padding(3, 4, 3, 4)
+        Button6.Location = New Point(458, 109)
         Button6.Name = "Button6"
-        Button6.Size = New Size(57, 52)
+        Button6.Size = New Size(50, 39)
         Button6.TabIndex = 21
         Button6.Text = "03"
         Button6.UseVisualStyleBackColor = True
@@ -101,10 +96,9 @@ Partial Class Pertanyaan
         ' Button7
         ' 
         Button7.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button7.Location = New Point(657, 145)
-        Button7.Margin = New Padding(3, 4, 3, 4)
+        Button7.Location = New Point(838, 109)
         Button7.Name = "Button7"
-        Button7.Size = New Size(58, 52)
+        Button7.Size = New Size(51, 39)
         Button7.TabIndex = 23
         Button7.Text = "05"
         Button7.UseVisualStyleBackColor = True
@@ -112,10 +106,9 @@ Partial Class Pertanyaan
         ' Button8
         ' 
         Button8.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button8.Location = New Point(504, 145)
-        Button8.Margin = New Padding(3, 4, 3, 4)
+        Button8.Location = New Point(646, 109)
         Button8.Name = "Button8"
-        Button8.Size = New Size(67, 52)
+        Button8.Size = New Size(59, 39)
         Button8.TabIndex = 22
         Button8.Text = "04"
         Button8.UseVisualStyleBackColor = True
@@ -124,18 +117,17 @@ Partial Class Pertanyaan
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(201, 312)
+        Label2.Location = New Point(420, 260)
         Label2.Name = "Label2"
-        Label2.Size = New Size(156, 29)
+        Label2.Size = New Size(125, 24)
         Label2.TabIndex = 24
         Label2.Text = "Pertanyaan?"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(22, 24)
-        PictureBox1.Margin = New Padding(3, 4, 3, 4)
+        PictureBox1.Location = New Point(19, 18)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(69, 65)
+        PictureBox1.Size = New Size(60, 49)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 26
         PictureBox1.TabStop = False
@@ -144,19 +136,18 @@ Partial Class Pertanyaan
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(91, 48)
+        Label1.Location = New Point(80, 36)
         Label1.Name = "Label1"
-        Label1.Size = New Size(110, 25)
+        Label1.Size = New Size(91, 20)
         Label1.TabIndex = 25
         Label1.Text = "Username"
         ' 
         ' Button3
         ' 
         Button3.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.Location = New Point(666, 299)
-        Button3.Margin = New Padding(3, 4, 3, 4)
+        Button3.Location = New Point(846, 245)
         Button3.Name = "Button3"
-        Button3.Size = New Size(49, 52)
+        Button3.Size = New Size(43, 39)
         Button3.TabIndex = 18
         Button3.Text = ">"
         Button3.UseVisualStyleBackColor = True
@@ -164,28 +155,28 @@ Partial Class Pertanyaan
         ' Button9
         ' 
         Button9.Font = New Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button9.Location = New Point(91, 299)
-        Button9.Margin = New Padding(3, 4, 3, 4)
+        Button9.Location = New Point(80, 243)
         Button9.Name = "Button9"
-        Button9.Size = New Size(49, 52)
+        Button9.Size = New Size(43, 39)
         Button9.TabIndex = 27
         Button9.Text = "<"
         Button9.UseVisualStyleBackColor = True
         ' 
         ' Button10
         ' 
-        Button10.Location = New Point(335, 528)
+        Button10.Location = New Point(426, 518)
+        Button10.Margin = New Padding(3, 2, 3, 2)
         Button10.Name = "Button10"
-        Button10.Size = New Size(94, 29)
+        Button10.Size = New Size(82, 22)
         Button10.TabIndex = 28
         Button10.Text = "Submit"
         Button10.UseVisualStyleBackColor = True
         ' 
         ' Pertanyaan
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(823, 600)
+        ClientSize = New Size(950, 610)
         Controls.Add(Button10)
         Controls.Add(Button9)
         Controls.Add(PictureBox1)
@@ -199,7 +190,6 @@ Partial Class Pertanyaan
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "Pertanyaan"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Questions"
