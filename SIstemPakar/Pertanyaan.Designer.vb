@@ -44,7 +44,7 @@ Partial Class Pertanyaan
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(91, 449)
+        Button1.Location = New Point(577, 425)
         Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
         Button1.Size = New Size(138, 63)
@@ -57,7 +57,7 @@ Partial Class Pertanyaan
         Button2.BackColor = SystemColors.Desktop
         Button2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(538, 449)
+        Button2.Location = New Point(91, 425)
         Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
         Button2.Size = New Size(177, 63)
