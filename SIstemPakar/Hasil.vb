@@ -152,6 +152,7 @@ Public Class Hasil
 
     Private Sub ButtonKembali_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim h As New Home()
+        h.userId = currentUserId
         h.Show()
         Me.Hide()
     End Sub
