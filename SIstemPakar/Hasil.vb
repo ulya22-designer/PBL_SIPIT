@@ -1,21 +1,22 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Drawing.Printing
 Imports Microsoft.Data.SqlClient
+Imports System.IO
+Imports System.Drawing.Drawing2D
 
 Public Class Hasil
 
     Private jawabanUser() As String
     Private currentUserId As Integer
 
-    ' === Constructor Baru ===
     Public Sub New(jawab() As String, uid As Integer)
         InitializeComponent()
         jawabanUser = jawab
         currentUserId = uid
     End Sub
 
-    Public jawaban() As String      ' diterima dari form Pertanyaan
-    Public userId As Integer        ' diterima dari login
+    Public jawaban() As String
+    Public userId As Integer
 
     Private profesiIdHasil As Integer
     Private namaProfesi As String
@@ -24,25 +25,25 @@ Public Class Hasil
     Private Sub Hasil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
 
-        ' tampilkan foto + nama
+        MakePictureBoxRound(PictureBox1)
+
         Label1.Text = CurrentUserName
         If CurrentUserFoto IsNot Nothing Then
             PictureBox1.Image = ByteArrayToImage(CurrentUserFoto)
         End If
 
-        ' Proses rule & tampilkan
         ProsesDiagnosis()
         SimpanKeDatabase()
-
     End Sub
 
+    Private Sub MakePictureBoxRound(pb As PictureBox)
+        Dim gp As New GraphicsPath()
+        gp.AddEllipse(0, 0, pb.Width - 1, pb.Height - 1)
+        pb.Region = New Region(gp)
+    End Sub
 
-    ' =============================================================
-    ' ===============  PROSES MENENTUKAN PROFESI  =================
-    ' =============================================================
     Private Sub ProsesDiagnosis()
 
-        ' Convert "ya"/"tidak" ke 1/0 untuk rule
         Dim v1 = If(jawabanUser(0) = "ya", 1, 0)
         Dim v2 = If(jawabanUser(1) = "ya", 1, 0)
         Dim v3 = If(jawabanUser(2) = "ya", 1, 0)
@@ -75,9 +76,8 @@ Public Class Hasil
                 If rd.Read() Then
                     profesiIdHasil = CInt(rd("profesi_id"))
                     namaProfesi = rd("nama_profesi").ToString()
-                    keteranganProfesi = rd("keterangan").ToString()
+                    keteranganProfesi = rd("Keterangan").ToString()
                 Else
-                    ' Default jika tidak ada rule yang cocok
                     profesiIdHasil = 5
                     namaProfesi = "Tidak Diketahui"
                     keteranganProfesi = "Sistem tidak dapat menentukan profesi Anda dengan pasti."
@@ -85,19 +85,14 @@ Public Class Hasil
             End Using
         End Using
 
-        ' tampilkan ke layar
         Label3.Text = namaProfesi
         Label2.Text = keteranganProfesi
-        Label2.MaximumSize = New Size(600, 0)   ' Lebar maksimum agar text membungkus
+        Label2.MaximumSize = New Size(600, 0)
         Label2.AutoSize = True
         Label2.TextAlign = ContentAlignment.MiddleCenter
 
     End Sub
 
-
-    ' =============================================================
-    ' ===============  SIMPAN KE DATABASE  =========================
-    ' =============================================================
     Private Sub SimpanKeDatabase()
         Using conn As New SqlConnection(connStr)
             conn.Open()
@@ -114,10 +109,6 @@ Public Class Hasil
         End Using
     End Sub
 
-
-    ' =============================================================
-    ' ===============  CETAK HASIL  ===============================
-    ' =============================================================
     Private Sub ButtonCetak_Click(sender As Object, e As EventArgs) Handles Button1.Click
         PrintPreviewDialog1.Document = PrintDocument1
         PrintPreviewDialog1.ShowDialog()
@@ -125,25 +116,51 @@ Public Class Hasil
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
 
+        Dim fontKopJudul As New Font("Arial", 16, FontStyle.Bold)
+        Dim fontKopSub As New Font("Arial", 11, FontStyle.Regular)
         Dim fontJudul As New Font("Arial", 18, FontStyle.Bold)
         Dim fontNormal As New Font("Arial", 12)
 
-        e.Graphics.DrawString("Hasil Tes Karir SIPIT", fontJudul, Brushes.Black, 100, 50)
-        e.Graphics.DrawString("Nama: " & CurrentUserName, fontNormal, Brushes.Black, 100, 100)
-        e.Graphics.DrawString("Profesi: " & namaProfesi, fontNormal, Brushes.Black, 100, 140)
-        e.Graphics.DrawString("Keterangan:", fontNormal, Brushes.Black, 100, 180)
-        e.Graphics.DrawString(keteranganProfesi, fontNormal, Brushes.Black, 100, 210)
+        Dim tanggalCetak As String = DateTime.Now.ToString("dd MMMM yyyy, HH:mm")
+
+        ' ============ LOGO PNJ (Sesuaikan Path Logo) ============
+        Try
+            Dim logo As Image = Image.FromFile("LOGO PNJ FIX 1.png")
+            e.Graphics.DrawImage(logo, 50, 20, 80, 80)
+        Catch ex As Exception
+        End Try
+
+        ' ================== KOP SURAT PNJ ==================
+        e.Graphics.DrawString("POLITEKNIK NEGERI JAKARTA", fontKopJudul, Brushes.Black, 150, 25)
+        e.Graphics.DrawString("JURUSAN TEKNIK INFORMATIKA DAN KOMPUTER", fontKopSub, Brushes.Black, 150, 50)
+        e.Graphics.DrawString("Kampus PNJ · Kukusan · Depok", fontKopSub, Brushes.Black, 150, 70)
+
+        ' garis bawah kop
+        e.Graphics.DrawLine(Pens.Black, 50, 110, 750, 110)
+
+        ' ================= ISI DOKUMEN =================
+        e.Graphics.DrawString("Hasil Tes Karir SIPIT", fontJudul, Brushes.Black, 100, 150)
+        e.Graphics.DrawString("Dicetak pada: " & tanggalCetak, fontNormal, Brushes.Black, 100, 190)
+
+        e.Graphics.DrawString("Nama: " & CurrentUserName, fontNormal, Brushes.Black, 100, 230)
+        e.Graphics.DrawString("Profesi: " & namaProfesi, fontNormal, Brushes.Black, 100, 260)
+
+        e.Graphics.DrawString("Keterangan:", fontNormal, Brushes.Black, 100, 300)
+        e.Graphics.DrawString(keteranganProfesi, fontNormal, Brushes.Black, 100, 330)
 
     End Sub
 
-
-    ' =============================================================
-    ' ===============  KEMBALI KE HOME  ===========================
-    ' =============================================================
     Private Sub ButtonKembali_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim h As New Home()
         h.Show()
         Me.Hide()
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
 Imports System.IO
+Imports System.Drawing.Drawing2D   ' ← PENTING untuk GraphicsPath
 
 Public Class Home
 
@@ -8,10 +9,28 @@ Public Class Home
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
+
+        ' ===========================
+        '  BIKIN FOTO PROFIL BULAT
+        ' ===========================
+        MakePictureBoxRound(PictureBox1)
+
         LoadUserData()
     End Sub
 
-    ' ====== LOAD DATA USER (nama + foto) ======
+    ' =====================================================
+    ' FUNCTION UNTUK MEMBUAT PICTUREBOX BERBENTUK BULAT
+    ' =====================================================
+    Private Sub MakePictureBoxRound(pb As PictureBox)
+        Dim gp As New GraphicsPath()
+        gp.AddEllipse(0, 0, pb.Width - 1, pb.Height - 1)
+        pb.Region = New Region(gp)
+    End Sub
+
+
+    ' =====================================================
+    ' LOAD DATA USER (Nama + Foto)
+    ' =====================================================
     Private Sub LoadUserData()
 
         Using conn As New SqlConnection(connStr)
@@ -25,10 +44,10 @@ Public Class Home
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
 
                 If rd.Read() Then
-                    ' Set Username
+                    ' tampilkan nama
                     Label1.Text = rd("nama").ToString()
 
-                    ' Tampilkan foto jika ada
+                    ' tampilkan foto profil
                     If Not IsDBNull(rd("foto")) Then
                         Dim imgBytes() As Byte = CType(rd("foto"), Byte())
                         Using ms As New MemoryStream(imgBytes)
@@ -45,20 +64,28 @@ Public Class Home
     End Sub
 
 
-    ' ========== TOMBOL MULAI TES ==========
+    ' =====================================================
+    ' TOMBOL MULAI TES
+    ' =====================================================
     Private Sub btnMulaiTes_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim p As New pertanyaan()
-        'p.userId = CurrentUserID   ' kirim userId ke halaman pertanyaan
+        Dim p As New Pertanyaan()
         p.Show()
         Me.Hide()
     End Sub
 
 
-    ' ========== TOMBOL KELUAR ==========
+    ' =====================================================
+    ' TOMBOL KELUAR KE LOGIN
+    ' =====================================================
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim f As New login()
         f.Show()
         Me.Hide()
+    End Sub
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        ' optional kalau nanti mau buat fitur edit foto
     End Sub
 
 End Class

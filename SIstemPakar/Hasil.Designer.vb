@@ -59,7 +59,7 @@ Partial Class Hasil
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(90, 222)
+        Label3.Location = New Point(142, 233)
         Label3.Name = "Label3"
         Label3.Size = New Size(424, 61)
         Label3.TabIndex = 29
@@ -69,7 +69,7 @@ Partial Class Hasil
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(107, 298)
+        Label2.Location = New Point(285, 294)
         Label2.Name = "Label2"
         Label2.Size = New Size(151, 24)
         Label2.TabIndex = 30
@@ -126,7 +126,7 @@ Partial Class Hasil
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(720, 494)
+        ClientSize = New Size(707, 494)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(PictureBox2)
