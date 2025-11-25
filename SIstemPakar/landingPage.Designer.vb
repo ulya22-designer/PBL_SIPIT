@@ -35,9 +35,9 @@ Partial Class landingPage
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(142, 332)
+        Label2.Location = New Point(155, 250)
         Label2.Name = "Label2"
-        Label2.Size = New Size(537, 31)
+        Label2.Size = New Size(414, 25)
         Label2.TabIndex = 14
         Label2.Text = "JELI MELIHAT PELUANG KARIR IT ANDA"
         ' 
@@ -47,10 +47,9 @@ Partial Class landingPage
         Button2.Cursor = Cursors.IBeam
         Button2.Font = New Font("Microsoft Sans Serif", 18F)
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(142, 472)
-        Button2.Margin = New Padding(3, 4, 3, 4)
+        Button2.Location = New Point(124, 354)
         Button2.Name = "Button2"
-        Button2.Size = New Size(534, 51)
+        Button2.Size = New Size(467, 38)
         Button2.TabIndex = 13
         Button2.Text = "Keluar"
         Button2.UseVisualStyleBackColor = False
@@ -61,10 +60,9 @@ Partial Class landingPage
         Button1.Cursor = Cursors.IBeam
         Button1.Font = New Font("Microsoft Sans Serif", 18F)
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(142, 393)
-        Button1.Margin = New Padding(3, 4, 3, 4)
+        Button1.Location = New Point(124, 295)
         Button1.Name = "Button1"
-        Button1.Size = New Size(534, 51)
+        Button1.Size = New Size(467, 38)
         Button1.TabIndex = 12
         Button1.Text = "Mulai"
         Button1.UseVisualStyleBackColor = False
@@ -72,10 +70,9 @@ Partial Class landingPage
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(342, 57)
-        PictureBox2.Margin = New Padding(3, 4, 3, 4)
+        PictureBox2.Location = New Point(299, 43)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(141, 133)
+        PictureBox2.Size = New Size(123, 100)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 11
         PictureBox2.TabStop = False
@@ -84,24 +81,23 @@ Partial Class landingPage
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(313, 232)
+        Label3.Location = New Point(274, 174)
         Label3.Name = "Label3"
-        Label3.Size = New Size(201, 76)
+        Label3.Size = New Size(159, 61)
         Label3.TabIndex = 10
         Label3.Text = "SIPIT"
         ' 
         ' landingPage
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(823, 600)
+        ClientSize = New Size(720, 450)
         Controls.Add(Label2)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(PictureBox2)
         Controls.Add(Label3)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "landingPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Landing"

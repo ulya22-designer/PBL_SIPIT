@@ -1,9 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
+Imports System.Drawing.Drawing2D
+
 Public Class Pertanyaan
 
     Dim listPertanyaan As New List(Of String)
-    Dim jawaban(4) As String     ' Menyimpan YA/TIDAK
+    Dim jawaban(4) As String      ' Menyimpan YA/TIDAK
     Dim currentIndex As Integer = 0
 
     Private Sub Pertanyaan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,19 +14,24 @@ Public Class Pertanyaan
         ' tampilkan user
         Label1.Text = CurrentUserName
 
-        ' tampilkan foto
+        ' tampilkan foto user
         If CurrentUserFoto IsNot Nothing Then
             PictureBox1.Image = ByteArrayToImage(CurrentUserFoto)
         End If
+
+        ' === Membuat PictureBox bulat ===
+        Dim gp As New GraphicsPath()
+        gp.AddEllipse(0, 0, PictureBox1.Width - 1, PictureBox1.Height - 1)
+        PictureBox1.Region = New Region(gp)
 
         LoadPertanyaan()
         TampilkanPertanyaan(0)
         UpdateNavigasi()
     End Sub
 
-    '=============================
+    ' =============================
     ' LOAD PERTANYAAN DARI DATABASE
-    '=============================
+    ' =============================
     Private Sub LoadPertanyaan()
         Using conn As New SqlConnection(connStr)
             conn.Open()
@@ -39,31 +46,32 @@ Public Class Pertanyaan
         End Using
     End Sub
 
-    '=============================
+    ' =============================
     ' FUNGSI TAMPIL PERTANYAAN
-    '=============================
+    ' =============================
     Private Sub TampilkanPertanyaan(index As Integer)
         currentIndex = index
 
-        ' --- Pengaturan Tampilan Label Pertanyaan ---
-        Label2.MaximumSize = New Size(700, 0)   ' Lebar maksimum agar text membungkus
+        Label2.MaximumSize = New Size(700, 0)
         Label2.AutoSize = True
         Label2.TextAlign = ContentAlignment.MiddleCenter
-
         Label2.Text = listPertanyaan(index)
 
         UpdateNavigasi()
         UpdateNomorButton()
     End Sub
 
-
-    ' MENONAKTIFKAN / MENGAKTIFKAN BUTTON GESER
+    ' =============================
+    ' UPDATE NAVIGASI
+    ' =============================
     Private Sub UpdateNavigasi()
-        Button9.Enabled = (currentIndex > 0)
-        Button3.Enabled = (currentIndex < 4)
+        Button9.Enabled = (currentIndex > 0)                          ' geser kiri
+        Button3.Enabled = (currentIndex < listPertanyaan.Count - 1)  ' geser kanan
     End Sub
 
-    ' MEMBERI HIGHLIGHT BUTTON ANGKA
+    ' =============================
+    ' HIGHLIGHT NOMOR BUTTON
+    ' =============================
     Private Sub UpdateNomorButton()
         Button4.BackColor = If(currentIndex = 0, Color.LightBlue, Color.White)
         Button5.BackColor = If(currentIndex = 1, Color.LightBlue, Color.White)
@@ -72,65 +80,75 @@ Public Class Pertanyaan
         Button7.BackColor = If(currentIndex = 4, Color.LightBlue, Color.White)
     End Sub
 
-    '=============================
-    ' BUTTON NAVIGASI ANGKA
-    '=============================
-    Private Sub btn1_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    ' =============================
+    ' BUTTON NOMOR
+    ' =============================
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         TampilkanPertanyaan(0)
     End Sub
 
-    Private Sub btn2_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         TampilkanPertanyaan(1)
     End Sub
 
-    Private Sub btn3_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         TampilkanPertanyaan(2)
     End Sub
 
-    Private Sub btn4_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         TampilkanPertanyaan(3)
     End Sub
 
-    Private Sub btn5_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         TampilkanPertanyaan(4)
     End Sub
 
-    '=============================
+    ' =============================
     ' BUTTON GESER KIRI / KANAN
-    '=============================
-    Private Sub btnKiri_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    ' =============================
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         If currentIndex > 0 Then
             TampilkanPertanyaan(currentIndex - 1)
         End If
     End Sub
 
-    Private Sub btnKanan_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If currentIndex < 4 Then
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If currentIndex < listPertanyaan.Count - 1 Then
             TampilkanPertanyaan(currentIndex + 1)
         End If
     End Sub
 
-    '=============================
-    ' BUTTON YA / TIDAK
-    '=============================
-    Private Sub btnYa_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    ' =============================
+    ' BUTTON YA – AUTO NEXT
+    ' =============================
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         jawaban(currentIndex) = "ya"
-        MessageBox.Show("Jawaban disimpan!", "Info")
+        NextOrFinish()
     End Sub
 
-    Private Sub btnTidak_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    ' =============================
+    ' BUTTON TIDAK – AUTO NEXT
+    ' =============================
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         jawaban(currentIndex) = "tidak"
-        MessageBox.Show("Jawaban disimpan!", "Info")
+        NextOrFinish()
     End Sub
 
-    '=============================
-    ' BUTTON SELESAI TES
-    '=============================
-    Private Sub btnSelesai_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    ' =============================
+    ' FUNGSI LANJUT / SELESAI
+    ' =============================
+    Private Sub NextOrFinish()
 
-        ' cek apakah semua pertanyaan sudah dijawab
+        ' jika masih ada pertanyaan → lanjut
+        If currentIndex < listPertanyaan.Count - 1 Then
+            currentIndex += 1
+            TampilkanPertanyaan(currentIndex)
+            Return
+        End If
+
+        ' jika sudah pertanyaan terakhir → cek jawaban
         For i = 0 To 4
-            If jawaban(i) = Nothing Then
+            If jawaban(i) Is Nothing Then
                 MessageBox.Show("Pertanyaan nomor " & (i + 1) & " belum dijawab!")
                 Return
             End If
@@ -142,4 +160,9 @@ Public Class Pertanyaan
         Me.Hide()
 
     End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
 End Class
