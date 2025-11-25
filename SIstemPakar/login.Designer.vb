@@ -23,6 +23,7 @@ Partial Class login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         ContextMenuStrip1 = New ContextMenuStrip(components)
         Label1 = New Label()
         Label2 = New Label()
@@ -128,10 +129,12 @@ Partial Class login
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(237, 75)
         PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(141, 133)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 12
         PictureBox1.TabStop = False
         ' 

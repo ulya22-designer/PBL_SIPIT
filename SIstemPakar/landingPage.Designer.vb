@@ -22,6 +22,7 @@ Partial Class landingPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(landingPage))
         Label2 = New Label()
         Button2 = New Button()
         Button1 = New Button()
@@ -44,7 +45,7 @@ Partial Class landingPage
         ' 
         Button2.BackColor = SystemColors.Desktop
         Button2.Cursor = Cursors.IBeam
-        Button2.Font = New Font("Microsoft Sans Serif", 18.0F)
+        Button2.Font = New Font("Microsoft Sans Serif", 18F)
         Button2.ForeColor = SystemColors.ButtonHighlight
         Button2.Location = New Point(142, 472)
         Button2.Margin = New Padding(3, 4, 3, 4)
@@ -58,7 +59,7 @@ Partial Class landingPage
         ' 
         Button1.BackColor = Color.SlateBlue
         Button1.Cursor = Cursors.IBeam
-        Button1.Font = New Font("Microsoft Sans Serif", 18.0F)
+        Button1.Font = New Font("Microsoft Sans Serif", 18F)
         Button1.ForeColor = SystemColors.ButtonHighlight
         Button1.Location = New Point(142, 393)
         Button1.Margin = New Padding(3, 4, 3, 4)
@@ -70,10 +71,12 @@ Partial Class landingPage
         ' 
         ' PictureBox2
         ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(342, 57)
         PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(141, 133)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 11
         PictureBox2.TabStop = False
         ' 

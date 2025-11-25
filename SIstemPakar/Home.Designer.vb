@@ -22,6 +22,7 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Label1 = New Label()
         PictureBox1 = New PictureBox()
         Label2 = New Label()
@@ -93,10 +94,12 @@ Partial Class Home
         ' 
         ' PictureBox2
         ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(330, 73)
         PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(141, 133)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 6
         PictureBox2.TabStop = False
         ' 
