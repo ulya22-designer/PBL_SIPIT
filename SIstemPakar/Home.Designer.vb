@@ -30,6 +30,7 @@ Partial Class Home
         Button1 = New Button()
         PictureBox2 = New PictureBox()
         Label3 = New Label()
+        Button3 = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -38,17 +39,18 @@ Partial Class Home
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(88, 40)
+        Label1.Location = New Point(101, 53)
         Label1.Name = "Label1"
-        Label1.Size = New Size(91, 20)
+        Label1.Size = New Size(110, 25)
         Label1.TabIndex = 0
         Label1.Text = "Username"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(27, 24)
+        PictureBox1.Location = New Point(31, 32)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(56, 51)
+        PictureBox1.Size = New Size(64, 68)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
@@ -57,9 +59,9 @@ Partial Class Home
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(140, 267)
+        Label2.Location = New Point(130, 355)
         Label2.Name = "Label2"
-        Label2.Size = New Size(414, 25)
+        Label2.Size = New Size(537, 31)
         Label2.TabIndex = 9
         Label2.Text = "JELI MELIHAT PELUANG KARIR IT ANDA"
         ' 
@@ -69,9 +71,10 @@ Partial Class Home
         Button2.Cursor = Cursors.IBeam
         Button2.Font = New Font("Microsoft Sans Serif", 18F)
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(114, 366)
+        Button2.Location = New Point(130, 488)
+        Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
-        Button2.Size = New Size(467, 38)
+        Button2.Size = New Size(534, 51)
         Button2.TabIndex = 8
         Button2.Text = "Keluar"
         Button2.UseVisualStyleBackColor = False
@@ -82,9 +85,10 @@ Partial Class Home
         Button1.Cursor = Cursors.IBeam
         Button1.Font = New Font("Microsoft Sans Serif", 18F)
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(114, 315)
+        Button1.Location = New Point(130, 420)
+        Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
-        Button1.Size = New Size(467, 38)
+        Button1.Size = New Size(534, 51)
         Button1.TabIndex = 7
         Button1.Text = "Mulai Tes"
         Button1.UseVisualStyleBackColor = False
@@ -92,9 +96,10 @@ Partial Class Home
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(293, 61)
+        PictureBox2.Location = New Point(327, 78)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(123, 100)
+        PictureBox2.Size = New Size(141, 133)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 6
         PictureBox2.TabStop = False
@@ -103,17 +108,27 @@ Partial Class Home
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(277, 188)
+        Label3.Location = New Point(297, 249)
         Label3.Name = "Label3"
-        Label3.Size = New Size(159, 61)
+        Label3.Size = New Size(201, 76)
         Label3.TabIndex = 5
         Label3.Text = "SIPIT"
         ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(348, 585)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(94, 29)
+        Button3.TabIndex = 10
+        Button3.Text = "about us"
+        Button3.UseVisualStyleBackColor = True
+        ' 
         ' Home
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(720, 450)
+        ClientSize = New Size(823, 670)
+        Controls.Add(Button3)
         Controls.Add(Label2)
         Controls.Add(Button2)
         Controls.Add(Button1)
@@ -121,6 +136,7 @@ Partial Class Home
         Controls.Add(Label3)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Home"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Home"
@@ -137,4 +153,5 @@ Partial Class Home
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button3 As Button
 End Class

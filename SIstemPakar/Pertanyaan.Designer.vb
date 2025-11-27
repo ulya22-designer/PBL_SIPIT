@@ -35,6 +35,7 @@ Partial Class Pertanyaan
         Button3 = New Button()
         Button9 = New Button()
         Button10 = New Button()
+        Button11 = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -186,11 +187,21 @@ Partial Class Pertanyaan
         Button10.Text = "SUBMIT"
         Button10.UseVisualStyleBackColor = False
         ' 
+        ' Button11
+        ' 
+        Button11.Location = New Point(940, 36)
+        Button11.Name = "Button11"
+        Button11.Size = New Size(94, 29)
+        Button11.TabIndex = 29
+        Button11.Text = "Kembali"
+        Button11.UseVisualStyleBackColor = True
+        ' 
         ' Pertanyaan
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1086, 740)
+        Controls.Add(Button11)
         Controls.Add(Button10)
         Controls.Add(Button9)
         Controls.Add(PictureBox1)
@@ -225,4 +236,5 @@ Partial Class Pertanyaan
     Friend WithEvents Button3 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Button10 As Button
+    Friend WithEvents Button11 As Button
 End Class

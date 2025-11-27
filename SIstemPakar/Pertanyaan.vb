@@ -12,6 +12,17 @@ Public Class Pertanyaan
     Dim defaultYaColor As Color
     Dim defaultTidakColor As Color
 
+    Private Sub ResetJawaban()
+        For i As Integer = 0 To 4
+            jawaban(i) = Nothing
+        Next
+
+        UpdateNomorButton()
+        UpdateJawabanButton()
+        Button10.Visible = False
+    End Sub
+
+
     Private Sub Pertanyaan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
 
@@ -218,5 +229,27 @@ Public Class Pertanyaan
         Me.Hide()
 
     End Sub
+
+    ' =============================
+    ' BUTTON KEMBALI KE HOME
+    ' =============================
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Dim result = MessageBox.Show(
+        "Apakah Anda yakin ingin kembali? Semua progress akan hilang.",
+        "Konfirmasi",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning
+    )
+
+        If result = DialogResult.Yes Then
+            ResetJawaban()
+
+            Dim hm As New Home()
+            hm.userId = CurrentUserID
+            hm.Show()
+            Me.Hide()
+        End If
+    End Sub
+
 
 End Class

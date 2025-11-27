@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
 Imports System.IO
-Imports System.Drawing.Drawing2D   ' ← PENTING untuk GraphicsPath
+Imports System.Drawing.Drawing2D
 
 Public Class Home
 
@@ -10,16 +10,16 @@ Public Class Home
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
 
-        ' ===========================
-        '  BIKIN FOTO PROFIL BULAT
-        ' ===========================
+        ' Membuat foto profil bulat
         MakePictureBoxRound(PictureBox1)
 
+        ' Load data user
         LoadUserData()
     End Sub
 
+
     ' =====================================================
-    ' FUNCTION UNTUK MEMBUAT PICTUREBOX BERBENTUK BULAT
+    ' FUNCTION MEMBUAT PICTUREBOX BULAT
     ' =====================================================
     Private Sub MakePictureBoxRound(pb As PictureBox)
         Dim gp As New GraphicsPath()
@@ -44,24 +44,34 @@ Public Class Home
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
 
                 If rd.Read() Then
+
                     ' tampilkan nama
                     Label1.Text = rd("nama").ToString()
+                    CurrentUserName = rd("nama").ToString()
 
                     ' tampilkan foto profil
                     If Not IsDBNull(rd("foto")) Then
                         Dim imgBytes() As Byte = CType(rd("foto"), Byte())
+                        CurrentUserFoto = imgBytes ' simpan global juga
+
                         Using ms As New MemoryStream(imgBytes)
                             PictureBox1.Image = Image.FromStream(ms)
                         End Using
                     Else
                         PictureBox1.Image = Nothing
+                        CurrentUserFoto = Nothing
                     End If
+
                 End If
 
             End Using
         End Using
 
+        ' Simpan ID global biar halaman lain tahu siapa usernya
+        CurrentUserID = userId
+
     End Sub
+
 
 
     ' =====================================================
@@ -75,7 +85,20 @@ Public Class Home
 
 
     ' =====================================================
-    ' TOMBOL KELUAR KE LOGIN
+    ' TOMBOL ABOUT US (MENU BARU)
+    ' =====================================================
+    Private Sub ButtonAboutUs_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+        Dim f As New tentangKami()
+        f.Show()
+        Me.Hide()
+
+    End Sub
+
+
+
+    ' =====================================================
+    ' TOMBOL KELUAR (KEMBALI KE LOGIN)
     ' =====================================================
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim f As New login()
@@ -83,9 +106,5 @@ Public Class Home
         Me.Hide()
     End Sub
 
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        ' optional kalau nanti mau buat fitur edit foto
-    End Sub
 
 End Class
