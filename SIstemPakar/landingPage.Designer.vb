@@ -24,92 +24,145 @@ Partial Class landingPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(landingPage))
         Label2 = New Label()
-        Button2 = New Button()
-        Button1 = New Button()
-        PictureBox2 = New PictureBox()
         Label3 = New Label()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        RoundedButton1 = New RoundedButton()
+        RoundedButton2 = New RoundedButton()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(155, 250)
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(67, 239)
         Label2.Name = "Label2"
-        Label2.Size = New Size(414, 25)
+        Label2.Size = New Size(352, 20)
         Label2.TabIndex = 14
         Label2.Text = "JELI MELIHAT PELUANG KARIR IT ANDA"
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = SystemColors.Desktop
-        Button2.Cursor = Cursors.IBeam
-        Button2.Font = New Font("Microsoft Sans Serif", 18F)
-        Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(124, 354)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(467, 38)
-        Button2.TabIndex = 13
-        Button2.Text = "Keluar"
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.SlateBlue
-        Button1.Cursor = Cursors.IBeam
-        Button1.Font = New Font("Microsoft Sans Serif", 18F)
-        Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(124, 295)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(467, 38)
-        Button1.TabIndex = 12
-        Button1.Text = "Mulai"
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(299, 43)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(123, 100)
-        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox2.TabIndex = 11
-        PictureBox2.TabStop = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(274, 174)
+        Label3.Font = New Font("Montagu Slab 144pt", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(51, 16)
         Label3.Name = "Label3"
-        Label3.Size = New Size(159, 61)
+        Label3.Size = New Size(69, 28)
         Label3.TabIndex = 10
         Label3.Text = "SIPIT"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(12, 12)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(37, 37)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 15
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(425, -49)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(421, 558)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 16
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(-2, 297)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(209, 176)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 17
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(109, 93)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(268, 112)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 18
+        PictureBox4.TabStop = False
+        ' 
+        ' RoundedButton1
+        ' 
+        RoundedButton1.BackColor = Color.SlateBlue
+        RoundedButton1.CornerRadius = 20
+        RoundedButton1.FlatStyle = FlatStyle.Popup
+        RoundedButton1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton1.ForeColor = SystemColors.Control
+        RoundedButton1.Location = New Point(147, 297)
+        RoundedButton1.Name = "RoundedButton1"
+        RoundedButton1.Size = New Size(84, 40)
+        RoundedButton1.TabIndex = 19
+        RoundedButton1.Text = "Mulai"
+        RoundedButton1.UseVisualStyleBackColor = False
+        ' 
+        ' RoundedButton2
+        ' 
+        RoundedButton2.BackColor = SystemColors.Desktop
+        RoundedButton2.CornerRadius = 20
+        RoundedButton2.FlatStyle = FlatStyle.Popup
+        RoundedButton2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton2.ForeColor = SystemColors.Control
+        RoundedButton2.Location = New Point(237, 297)
+        RoundedButton2.Name = "RoundedButton2"
+        RoundedButton2.Size = New Size(84, 39)
+        RoundedButton2.TabIndex = 20
+        RoundedButton2.Text = "Keluar"
+        RoundedButton2.UseVisualStyleBackColor = False
         ' 
         ' landingPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.Window
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(720, 450)
+        ClientSize = New Size(834, 467)
+        Controls.Add(RoundedButton2)
+        Controls.Add(RoundedButton1)
+        Controls.Add(PictureBox4)
+        Controls.Add(PictureBox1)
         Controls.Add(Label2)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
-        Controls.Add(PictureBox2)
         Controls.Add(Label3)
+        Controls.Add(PictureBox2)
+        Controls.Add(PictureBox3)
         Name = "landingPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Landing"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents RoundedButton2 As RoundedButton
 
 End Class

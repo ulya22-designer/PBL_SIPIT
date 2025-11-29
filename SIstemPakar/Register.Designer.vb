@@ -23,6 +23,7 @@ Partial Class Register
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Register))
         TextBox1 = New TextBox()
         PictureBox1 = New PictureBox()
         Label2 = New Label()
@@ -50,10 +51,11 @@ Partial Class Register
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(209, 31)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(122, 102)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 16
         PictureBox1.TabStop = False
         ' 
