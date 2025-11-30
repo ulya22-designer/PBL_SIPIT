@@ -11,7 +11,6 @@ Public Class login
 
     ' Tombol LOGIN
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
         Dim username As String = TextBox1.Text.Trim()
         Dim password As String = TextBox2.Text.Trim()
 
@@ -73,7 +72,6 @@ Public Class login
         Me.Hide()
     End Sub
 
-
     ' Label menuju REGISTER
     Private Sub lblRegister_Click(sender As Object, e As EventArgs) Handles Label4.Click
         Dim reg As New register()
@@ -81,4 +79,11 @@ Public Class login
         Me.Hide()
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class

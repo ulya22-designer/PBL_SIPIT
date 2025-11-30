@@ -30,12 +30,25 @@ Partial Class login
         TextBox1 = New TextBox()
         TextBox2 = New TextBox()
         Label3 = New Label()
-        Button1 = New Button()
-        Button3 = New Button()
         Label4 = New Label()
+        Button1 = New RoundedButton()
+        Button3 = New RoundedButton()
         PictureBox1 = New PictureBox()
+        Label6 = New Label()
+        PictureBox2 = New PictureBox()
+        Panel1 = New Panel()
+        Panel2 = New Panel()
+        PictureBox3 = New PictureBox()
+        Panel3 = New Panel()
+        Panel4 = New Panel()
+        PictureBox4 = New PictureBox()
         Label5 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ContextMenuStrip1
@@ -47,8 +60,9 @@ Partial Class login
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(201, 181)
+        Label1.Location = New Point(524, 103)
         Label1.Name = "Label1"
         Label1.Size = New Size(133, 42)
         Label1.TabIndex = 1
@@ -57,8 +71,9 @@ Partial Class login
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(85, 253)
+        Label2.Location = New Point(404, 171)
         Label2.Name = "Label2"
         Label2.Size = New Size(105, 24)
         Label2.TabIndex = 2
@@ -66,102 +81,211 @@ Partial Class login
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(256, 258)
+        TextBox1.BackColor = Color.FromArgb(CByte(251), CByte(241), CByte(255))
+        TextBox1.BorderStyle = BorderStyle.None
+        TextBox1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox1.Location = New Point(2, 14)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(191, 23)
+        TextBox1.Size = New Size(326, 22)
         TextBox1.TabIndex = 4
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(256, 310)
+        TextBox2.BackColor = Color.FromArgb(CByte(249), CByte(234), CByte(255))
+        TextBox2.BorderStyle = BorderStyle.None
+        TextBox2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox2.Location = New Point(3, 15)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(191, 23)
+        TextBox2.Size = New Size(323, 22)
         TextBox2.TabIndex = 5
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label3.Location = New Point(85, 305)
+        Label3.Location = New Point(404, 267)
         Label3.Name = "Label3"
         Label3.Size = New Size(100, 24)
         Label3.TabIndex = 6
         Label3.Text = "Password"
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.FromArgb(CByte(154), CByte(152), CByte(189))
+        Label4.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = SystemColors.Window
+        Label4.Location = New Point(220, 223)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(84, 24)
+        Label4.TabIndex = 11
+        Label4.Text = "SIGN IN"
+        ' 
         ' Button1
         ' 
         Button1.BackColor = Color.SlateBlue
-        Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(85, 383)
+        Button1.CornerRadius = 10
+        Button1.FlatStyle = FlatStyle.Popup
+        Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.ForeColor = SystemColors.Control
+        Button1.Location = New Point(406, 352)
         Button1.Name = "Button1"
-        Button1.Size = New Size(362, 31)
-        Button1.TabIndex = 7
+        Button1.Size = New Size(182, 40)
+        Button1.TabIndex = 21
         Button1.Text = "Login"
         Button1.UseVisualStyleBackColor = False
         ' 
         ' Button3
         ' 
         Button3.BackColor = SystemColors.Desktop
-        Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Button3.ForeColor = SystemColors.ButtonHighlight
-        Button3.Location = New Point(85, 420)
+        Button3.CornerRadius = 10
+        Button3.FlatStyle = FlatStyle.Popup
+        Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.ForeColor = SystemColors.Control
+        Button3.Location = New Point(601, 352)
         Button3.Name = "Button3"
-        Button3.Size = New Size(362, 31)
-        Button3.TabIndex = 9
-        Button3.Text = "Keluar"
+        Button3.Size = New Size(181, 40)
+        Button3.TabIndex = 22
+        Button3.Text = "Kembali"
         Button3.UseVisualStyleBackColor = False
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Cursor = Cursors.Hand
-        Label4.Font = New Font("Microsoft Sans Serif", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = SystemColors.HotTrack
-        Label4.Location = New Point(404, 471)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(43, 16)
-        Label4.TabIndex = 11
-        Label4.Text = "Daftar"
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.BackColor = Color.Transparent
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(207, 56)
+        PictureBox1.Location = New Point(-2, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(123, 100)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 12
+        PictureBox1.Size = New Size(332, 474)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 23
         PictureBox1.TabStop = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = Color.Black
+        Label6.Location = New Point(232, 138)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(72, 24)
+        Label6.TabIndex = 24
+        Label6.Text = "LOGIN"
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(550, 24)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(79, 76)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 25
+        PictureBox2.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.Controls.Add(Panel2)
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Controls.Add(TextBox1)
+        Panel1.Location = New Point(404, 189)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(378, 48)
+        Panel1.TabIndex = 26
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.FromArgb(CByte(47), CByte(49), CByte(98))
+        Panel2.Dock = DockStyle.Bottom
+        Panel2.Location = New Point(0, 47)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(378, 1)
+        Panel2.TabIndex = 6
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(335, 7)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(37, 36)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 5
+        PictureBox3.TabStop = False
+        ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.Transparent
+        Panel3.Controls.Add(Panel4)
+        Panel3.Controls.Add(PictureBox4)
+        Panel3.Controls.Add(TextBox2)
+        Panel3.Location = New Point(406, 282)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(378, 48)
+        Panel3.TabIndex = 27
+        ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.FromArgb(CByte(47), CByte(49), CByte(98))
+        Panel4.Dock = DockStyle.Bottom
+        Panel4.Location = New Point(0, 47)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(378, 1)
+        Panel4.TabIndex = 6
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(335, 7)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(37, 36)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 5
+        PictureBox4.TabStop = False
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(292, 472)
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(510, 439)
         Label5.Name = "Label5"
-        Label5.Size = New Size(111, 15)
-        Label5.TabIndex = 13
-        Label5.Text = "Belum punya akun?"
+        Label5.Size = New Size(147, 16)
+        Label5.TabIndex = 28
+        Label5.Text = "Developed by : Group 7"
         ' 
         ' login
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(559, 547)
+        BackColor = SystemColors.Window
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(834, 467)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
         Controls.Add(Label5)
-        Controls.Add(PictureBox1)
-        Controls.Add(Label4)
+        Controls.Add(Panel3)
+        Controls.Add(Panel1)
+        Controls.Add(PictureBox2)
+        Controls.Add(Label6)
         Controls.Add(Button3)
         Controls.Add(Button1)
-        Controls.Add(Label3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
-        Controls.Add(Label2)
+        Controls.Add(Label4)
         Controls.Add(Label1)
+        Controls.Add(PictureBox1)
         Name = "login"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        Panel3.PerformLayout()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -172,9 +296,17 @@ Partial Class login
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button1 As RoundedButton
+    Friend WithEvents Button3 As RoundedButton
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label5 As Label
 End Class

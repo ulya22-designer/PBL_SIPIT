@@ -41,27 +41,27 @@ Partial Class landingPage
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(67, 239)
+        Label2.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(31, 235)
         Label2.Name = "Label2"
-        Label2.Size = New Size(352, 20)
+        Label2.Size = New Size(448, 25)
         Label2.TabIndex = 14
         Label2.Text = "JELI MELIHAT PELUANG KARIR IT ANDA"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Montagu Slab 144pt", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(51, 16)
+        Label3.Font = New Font("Azeret Mono Medium", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(70, 21)
         Label3.Name = "Label3"
-        Label3.Size = New Size(69, 28)
+        Label3.Size = New Size(72, 25)
         Label3.TabIndex = 10
         Label3.Text = "SIPIT"
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(12, 12)
+        PictureBox1.Location = New Point(31, 17)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(37, 37)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
@@ -94,9 +94,9 @@ Partial Class landingPage
         ' 
         PictureBox4.BackColor = Color.Transparent
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(109, 93)
+        PictureBox4.Location = New Point(12, 92)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(268, 112)
+        PictureBox4.Size = New Size(325, 140)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox4.TabIndex = 18
         PictureBox4.TabStop = False
@@ -104,13 +104,13 @@ Partial Class landingPage
         ' RoundedButton1
         ' 
         RoundedButton1.BackColor = Color.SlateBlue
-        RoundedButton1.CornerRadius = 20
+        RoundedButton1.CornerRadius = 10
         RoundedButton1.FlatStyle = FlatStyle.Popup
         RoundedButton1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = SystemColors.Control
-        RoundedButton1.Location = New Point(147, 297)
+        RoundedButton1.Location = New Point(31, 297)
         RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(84, 40)
+        RoundedButton1.Size = New Size(103, 40)
         RoundedButton1.TabIndex = 19
         RoundedButton1.Text = "Mulai"
         RoundedButton1.UseVisualStyleBackColor = False
@@ -118,13 +118,13 @@ Partial Class landingPage
         ' RoundedButton2
         ' 
         RoundedButton2.BackColor = SystemColors.Desktop
-        RoundedButton2.CornerRadius = 20
+        RoundedButton2.CornerRadius = 10
         RoundedButton2.FlatStyle = FlatStyle.Popup
         RoundedButton2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = SystemColors.Control
-        RoundedButton2.Location = New Point(237, 297)
+        RoundedButton2.Location = New Point(140, 297)
         RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.Size = New Size(84, 39)
+        RoundedButton2.Size = New Size(103, 39)
         RoundedButton2.TabIndex = 20
         RoundedButton2.Text = "Keluar"
         RoundedButton2.UseVisualStyleBackColor = False
@@ -137,11 +137,11 @@ Partial Class landingPage
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(834, 467)
+        Controls.Add(Label2)
         Controls.Add(RoundedButton2)
         Controls.Add(RoundedButton1)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox1)
-        Controls.Add(Label2)
         Controls.Add(Label3)
         Controls.Add(PictureBox2)
         Controls.Add(PictureBox3)
