@@ -96,7 +96,7 @@ Partial Class ForgotPassword
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(339, 360)
+        Button1.Location = New Point(374, 360)
         Button1.Name = "Button1"
         Button1.Size = New Size(93, 23)
         Button1.TabIndex = 32
@@ -123,7 +123,7 @@ Partial Class ForgotPassword
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(230, 360)
+        Button2.Location = New Point(262, 360)
         Button2.Name = "Button2"
         Button2.Size = New Size(93, 23)
         Button2.TabIndex = 35
