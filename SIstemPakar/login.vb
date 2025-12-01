@@ -4,6 +4,8 @@ Imports Microsoft.Data.SqlClient
 Public Class login
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+
         Me.StartPosition = FormStartPosition.CenterScreen
         TextBox2.UseSystemPasswordChar = True
     End Sub

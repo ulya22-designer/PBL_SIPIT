@@ -8,6 +8,8 @@ Public Class Home
     Public Property userId As Integer     ' menerima user_id dari login
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+
         Me.StartPosition = FormStartPosition.CenterScreen
 
         ' Membuat foto profil bulat

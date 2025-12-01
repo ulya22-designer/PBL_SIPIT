@@ -8,6 +8,7 @@ Public Class tentangKami
     Private chartProfesi As Chart
 
     Private Sub tentangKami_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
 
         Me.StartPosition = FormStartPosition.CenterScreen
 

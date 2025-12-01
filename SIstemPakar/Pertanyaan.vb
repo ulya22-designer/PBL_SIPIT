@@ -24,6 +24,8 @@ Public Class Pertanyaan
 
 
     Private Sub Pertanyaan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+
         Me.StartPosition = FormStartPosition.CenterScreen
 
         ' simpan warna awal tombol YA & TIDAK

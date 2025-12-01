@@ -23,6 +23,8 @@ Public Class Hasil
     Private keteranganProfesi As String
 
     Private Sub Hasil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+
         Me.StartPosition = FormStartPosition.CenterScreen
 
         MakePictureBoxRound(PictureBox1)

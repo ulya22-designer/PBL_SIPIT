@@ -1,5 +1,6 @@
 ﻿Public Class landingPage
     Private Sub LandingPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
 
     End Sub
 

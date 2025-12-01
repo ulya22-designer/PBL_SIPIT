@@ -7,6 +7,8 @@ Public Class register
     Private fotoBytes As Byte() = Nothing   ' Menyimpan foto yang diupload
 
     Private Sub register_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+
         Me.StartPosition = FormStartPosition.CenterScreen
 
         TextBox3.UseSystemPasswordChar = True

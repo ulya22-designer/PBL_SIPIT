@@ -36,9 +36,10 @@ Partial Class Riwayat
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(349, 28)
+        PictureBox2.Location = New Point(399, 37)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(79, 76)
+        PictureBox2.Size = New Size(90, 101)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 29
         PictureBox2.TabStop = False
@@ -48,48 +49,53 @@ Partial Class Riwayat
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(213, 118)
+        Label1.Location = New Point(243, 157)
         Label1.Name = "Label1"
-        Label1.Size = New Size(351, 42)
+        Label1.Size = New Size(440, 54)
         Label1.TabIndex = 28
         Label1.Text = "RIWAYAT SURVEY"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(41, 189)
+        DataGridView1.Location = New Point(47, 252)
+        DataGridView1.Margin = New Padding(3, 4, 3, 4)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(719, 162)
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.Size = New Size(822, 216)
         DataGridView1.TabIndex = 30
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(405, 385)
+        Button1.Location = New Point(463, 513)
+        Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
+        Button1.Size = New Size(86, 31)
         Button1.TabIndex = 31
         Button1.Text = "Delete"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(314, 385)
+        Button2.Location = New Point(359, 513)
+        Button2.Margin = New Padding(3, 4, 3, 4)
         Button2.Name = "Button2"
-        Button2.Size = New Size(75, 23)
+        Button2.Size = New Size(86, 31)
         Button2.TabIndex = 32
         Button2.Text = "Kembali"
         Button2.UseVisualStyleBackColor = True
         ' 
         ' Riwayat
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(914, 600)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(DataGridView1)
         Controls.Add(PictureBox2)
         Controls.Add(Label1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Riwayat"
         Text = "Riwayat"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
