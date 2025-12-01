@@ -129,7 +129,7 @@ Partial Class login
         Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.Control
-        Button1.Location = New Point(406, 352)
+        Button1.Location = New Point(406, 369)
         Button1.Name = "Button1"
         Button1.Size = New Size(182, 40)
         Button1.TabIndex = 21
@@ -143,7 +143,7 @@ Partial Class login
         Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button3.ForeColor = SystemColors.Control
-        Button3.Location = New Point(601, 352)
+        Button3.Location = New Point(601, 369)
         Button3.Name = "Button3"
         Button3.Size = New Size(181, 40)
         Button3.TabIndex = 22
@@ -249,11 +249,12 @@ Partial Class login
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
         Label5.Font = New Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(510, 439)
+        Label5.ForeColor = Color.Blue
+        Label5.Location = New Point(672, 342)
         Label5.Name = "Label5"
-        Label5.Size = New Size(147, 16)
+        Label5.Size = New Size(112, 16)
         Label5.TabIndex = 28
-        Label5.Text = "Developed by : Group 7"
+        Label5.Text = "Forgot Password"
         ' 
         ' login
         ' 

@@ -30,6 +30,9 @@ Partial Class ForgotPassword
         Label3 = New Label()
         TextBox2 = New TextBox()
         Button1 = New Button()
+        Label4 = New Label()
+        TextBox3 = New TextBox()
+        Button2 = New Button()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -57,7 +60,7 @@ Partial Class ForgotPassword
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(316, 219)
+        TextBox1.Location = New Point(316, 213)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(247, 23)
         TextBox1.TabIndex = 28
@@ -67,7 +70,7 @@ Partial Class ForgotPassword
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(163, 219)
+        Label2.Location = New Point(163, 258)
         Label2.Name = "Label2"
         Label2.Size = New Size(113, 20)
         Label2.TabIndex = 29
@@ -78,7 +81,7 @@ Partial Class ForgotPassword
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(163, 265)
+        Label3.Location = New Point(163, 304)
         Label3.Name = "Label3"
         Label3.Size = New Size(137, 20)
         Label3.TabIndex = 31
@@ -86,25 +89,55 @@ Partial Class ForgotPassword
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(316, 266)
+        TextBox2.Location = New Point(316, 259)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(247, 23)
         TextBox2.TabIndex = 30
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(316, 360)
+        Button1.Location = New Point(339, 360)
         Button1.Name = "Button1"
         Button1.Size = New Size(93, 23)
         Button1.TabIndex = 32
         Button1.Text = "Submit"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(163, 216)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(83, 20)
+        Label4.TabIndex = 34
+        Label4.Text = "Username"
+        ' 
+        ' TextBox3
+        ' 
+        TextBox3.Location = New Point(316, 305)
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(247, 23)
+        TextBox3.TabIndex = 33
+        ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(230, 360)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(93, 23)
+        Button2.TabIndex = 35
+        Button2.Text = "Kembali"
+        Button2.UseVisualStyleBackColor = True
+        ' 
         ' ForgotPassword
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Button2)
+        Controls.Add(Label4)
+        Controls.Add(TextBox3)
         Controls.Add(Button1)
         Controls.Add(Label3)
         Controls.Add(TextBox2)
@@ -126,4 +159,7 @@ Partial Class ForgotPassword
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Button2 As Button
 End Class
