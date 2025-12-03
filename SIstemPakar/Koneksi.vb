@@ -5,7 +5,7 @@ Module Koneksi
 
     ' Connection string ke database
     Public connStr As String =
-        Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\ululy\OneDrive\Desktop\ULYA SARA\Kuliah 2\Semester 3\Pemograman Visual\SIstemPakar\SIstemPakar\sipitDB.mdf";Integrated Security=True
+        "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ariz7\source\repos\PBL_SIPIT\SIstemPakar\sipitDB.mdf;Integrated Security=True"
 
     ' Function untuk mengambil koneksi baru
     Public Function GetConnection() As SqlConnection

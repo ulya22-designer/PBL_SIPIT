@@ -71,7 +71,7 @@ Partial Class ForgotPassword
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(186, 344)
         Label2.Name = "Label2"
         Label2.Size = New Size(142, 25)
@@ -82,7 +82,7 @@ Partial Class ForgotPassword
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(186, 405)
         Label3.Name = "Label3"
         Label3.Size = New Size(171, 25)
@@ -99,7 +99,7 @@ Partial Class ForgotPassword
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(374, 360)
+        Button1.Location = New Point(443, 460)
         Button1.Name = "Button1"
         Button1.Size = New Size(106, 31)
         Button1.TabIndex = 32
@@ -110,7 +110,7 @@ Partial Class ForgotPassword
         ' 
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.Location = New Point(186, 288)
         Label4.Name = "Label4"
         Label4.Size = New Size(102, 25)
@@ -127,7 +127,7 @@ Partial Class ForgotPassword
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(262, 360)
+        Button2.Location = New Point(263, 460)
         Button2.Name = "Button2"
         Button2.Size = New Size(106, 31)
         Button2.TabIndex = 35
@@ -136,7 +136,7 @@ Partial Class ForgotPassword
         ' 
         ' ForgotPassword
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(914, 600)
         Controls.Add(Button2)
