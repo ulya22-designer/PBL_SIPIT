@@ -8,10 +8,11 @@ Public Class tentangKami
     Private chartProfesi As Chart
 
     Private Sub tentangKami_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
 
         Me.StartPosition = FormStartPosition.CenterScreen
 
-        ' ==== Tampilkan user ====
+        ' Tampilkan user 
         Label2.Text = CurrentUserName
 
         If CurrentUserFoto IsNot Nothing Then
@@ -23,9 +24,6 @@ Public Class tentangKami
         gp.AddEllipse(0, 0, PictureBox1.Width - 1, PictureBox1.Height - 1)
         PictureBox1.Region = New Region(gp)
 
-        ' Isi teks
-        IsiDeskripsiSIPIT()
-        IsiDaftarProfesi()
 
         ' Buat chart manual
         BuatChartProfesi()
@@ -35,21 +33,7 @@ Public Class tentangKami
 
     End Sub
 
-
-    ' ============================================================
-    '  DESKRIPSI SIPIT
-    ' ============================================================
-    Private Sub IsiDeskripsiSIPIT()
-        Label1.Text =
-            "SIPIT (Sistem Pakar IT) adalah aplikasi kecerdasan buatan sederhana " &
-            "yang membantu pengguna mengetahui kecocokan profesi IT berdasarkan " &
-            "jawaban dari beberapa pertanyaan kemampuan dan preferensi."
-    End Sub
-
-
-    ' ============================================================
-    '  DAFTAR PROFESI
-    ' ============================================================
+    '  DAFTAR PROFESI=
     Private Sub IsiDaftarProfesi()
 
         Dim teks As String =
@@ -63,15 +47,11 @@ Public Class tentangKami
 
     End Sub
 
-
-    ' ============================================================
-    '  MEMBUAT CHART SECARA MANUAL (TANPA TOOLBOX)
-    ' ============================================================
+    '  CHART 
     Private Sub BuatChartProfesi()
 
         chartProfesi = New Chart()
-        chartProfesi.Size = New Size(500, 350)
-        chartProfesi.Location = New Point(50, 420)
+        chartProfesi.Dock = DockStyle.Fill     ' Chart otomatis ikut ukuran Panel
         chartProfesi.BackColor = Color.WhiteSmoke
         chartProfesi.BorderlineDashStyle = ChartDashStyle.Solid
         chartProfesi.BorderlineColor = Color.Gray
@@ -81,15 +61,13 @@ Public Class tentangKami
         Dim area As New ChartArea("AreaUtama")
         chartProfesi.ChartAreas.Add(area)
 
-        ' Tambahkan ke form
-        Me.Controls.Add(chartProfesi)
+        ' Masukkan chart ke panel, bukan ke form
+        Panel1.Controls.Clear()
+        Panel1.Controls.Add(chartProfesi)
 
     End Sub
 
-
-    ' ============================================================
     '  MENGISI DATA CHART DARI DATABASE
-    ' ============================================================
     Private Sub LoadChartData()
 
         chartProfesi.Series.Clear()
@@ -127,15 +105,21 @@ Public Class tentangKami
 
     End Sub
 
-
-    ' ============================================================
-    '  BUTTON KEMBALI
-    ' ============================================================
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        Dim f As New Home()
-        f.userId = CurrentUserID
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim f As New landingPage()
         f.Show()
         Me.Hide()
     End Sub
 
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+        Dim f As New Home()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        Dim f As New Riwayat()
+        f.Show()
+        Me.Hide()
+    End Sub
 End Class

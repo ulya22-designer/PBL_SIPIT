@@ -3,7 +3,7 @@ Imports Microsoft.Data.SqlClient
 Imports System.Drawing.Drawing2D
 
 Public Class Pertanyaan
-
+    Public Property userId As Integer
     Dim listPertanyaan As New List(Of String)
     Dim jawaban(4) As String
     Dim currentIndex As Integer = 0
@@ -24,6 +24,8 @@ Public Class Pertanyaan
 
 
     Private Sub Pertanyaan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+
         Me.StartPosition = FormStartPosition.CenterScreen
 
         ' simpan warna awal tombol YA & TIDAK
@@ -102,10 +104,7 @@ Public Class Pertanyaan
         UpdateSubmitButton()
     End Sub
 
-
-    ' =============================
     ' HIGHLIGHT YA/TIDAK 
-    ' =============================
     Private Sub UpdateJawabanButton()
 
         ' reset ke warna default desain
@@ -120,11 +119,7 @@ Public Class Pertanyaan
 
     End Sub
 
-
-
-    ' =============================
     ' SUBMIT BUTTON
-    ' =============================
     Private Sub UpdateSubmitButton()
 
         Dim semuaTerisi As Boolean = True
@@ -140,10 +135,7 @@ Public Class Pertanyaan
 
     End Sub
 
-
-    ' =============================
     ' BUTTON NOMOR
-    ' =============================
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         TampilkanPertanyaan(0)
     End Sub
@@ -164,10 +156,7 @@ Public Class Pertanyaan
         TampilkanPertanyaan(4)
     End Sub
 
-
-    ' =============================
     ' NAVIGASI KIRI KANAN
-    ' =============================
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         If currentIndex > 0 Then
             TampilkanPertanyaan(currentIndex - 1)
@@ -180,10 +169,7 @@ Public Class Pertanyaan
         End If
     End Sub
 
-
-    ' =============================
     ' JAWAB YA
-    ' =============================
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         jawaban(currentIndex) = "ya"
         UpdateJawabanButton()
@@ -191,9 +177,7 @@ Public Class Pertanyaan
         NextOrFinish()
     End Sub
 
-    ' =============================
     ' JAWAB TIDAK
-    ' =============================
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         jawaban(currentIndex) = "tidak"
         UpdateJawabanButton()
@@ -230,12 +214,10 @@ Public Class Pertanyaan
 
     End Sub
 
-    ' =============================
     ' BUTTON KEMBALI KE HOME
-    ' =============================
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Dim result = MessageBox.Show(
-        "Apakah Anda yakin ingin kembali? Semua progress akan hilang.",
+        "Apakah Anda yakin ingin meninggalkan halaman ini? Semua progress akan hilang.",
         "Konfirmasi",
         MessageBoxButtons.YesNo,
         MessageBoxIcon.Warning
@@ -245,11 +227,50 @@ Public Class Pertanyaan
             ResetJawaban()
 
             Dim hm As New Home()
-            hm.userId = CurrentUserID
             hm.Show()
             Me.Hide()
         End If
     End Sub
 
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        Dim result = MessageBox.Show(
+        "Apakah Anda yakin ingin meninggalkan halaman ini? Semua progress akan hilang.",
+        "Konfirmasi",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning
+    )
 
+        If result = DialogResult.Yes Then
+            ResetJawaban()
+
+            Dim hm As New Home()
+            hm.Show()
+            Me.Hide()
+        End If
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        Dim result = MessageBox.Show(
+        "Apakah Anda yakin ingin meninggalkan halaman ini? Semua progress akan hilang.",
+        "Konfirmasi",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning
+    )
+
+        If result = DialogResult.Yes Then
+            ResetJawaban()
+
+            Dim p As New Pertanyaan()
+            p.userId = Me.userId
+            p.Show()
+            Me.Hide()
+
+        End If
+    End Sub
+
+    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
+        Dim f As New landingPage()
+        f.Show()
+        Me.Hide()
+    End Sub
 End Class

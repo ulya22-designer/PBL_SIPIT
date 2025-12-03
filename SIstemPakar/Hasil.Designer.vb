@@ -23,33 +23,30 @@ Partial Class Hasil
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hasil))
-        PictureBox1 = New PictureBox()
         Label1 = New Label()
         Label3 = New Label()
         Label2 = New Label()
-        PictureBox2 = New PictureBox()
-        Button2 = New Button()
-        Button1 = New Button()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
+        RoundedButton1 = New RoundedButton()
+        Label6 = New Label()
+        Label5 = New Label()
+        Label4 = New Label()
+        PictureBox1 = New PictureBox()
+        RoundedButton2 = New RoundedButton()
+        PictureBox2 = New PictureBox()
+        PictureBox3 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Location = New Point(14, 17)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(64, 49)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 28
-        PictureBox1.TabStop = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(83, 32)
+        Label1.Location = New Point(76, 32)
         Label1.Name = "Label1"
         Label1.Size = New Size(91, 20)
         Label1.TabIndex = 27
@@ -58,8 +55,9 @@ Partial Class Hasil
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(142, 233)
+        Label3.Location = New Point(155, 228)
         Label3.Name = "Label3"
         Label3.Size = New Size(424, 61)
         Label3.TabIndex = 29
@@ -68,46 +66,13 @@ Partial Class Hasil
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(285, 294)
+        Label2.Location = New Point(110, 314)
         Label2.Name = "Label2"
         Label2.Size = New Size(151, 24)
         Label2.TabIndex = 30
         Label2.Text = "KETERANGAN"
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.Location = New Point(228, 59)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(243, 133)
-        PictureBox2.TabIndex = 31
-        PictureBox2.TabStop = False
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = SystemColors.Desktop
-        Button2.Cursor = Cursors.IBeam
-        Button2.Font = New Font("Microsoft Sans Serif", 18F)
-        Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(83, 406)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(525, 38)
-        Button2.TabIndex = 33
-        Button2.Text = "Keluar"
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.SlateBlue
-        Button1.Cursor = Cursors.IBeam
-        Button1.Font = New Font("Microsoft Sans Serif", 18F)
-        Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(83, 355)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(525, 38)
-        Button1.TabIndex = 32
-        Button1.Text = "Cetak Hasil"
-        Button1.UseVisualStyleBackColor = False
         ' 
         ' PrintPreviewDialog1
         ' 
@@ -122,34 +87,140 @@ Partial Class Hasil
         ' PrintDocument1
         ' 
         ' 
+        ' RoundedButton1
+        ' 
+        RoundedButton1.BackColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
+        RoundedButton1.CornerRadius = 10
+        RoundedButton1.FlatStyle = FlatStyle.Popup
+        RoundedButton1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton1.ForeColor = SystemColors.Control
+        RoundedButton1.Location = New Point(710, 26)
+        RoundedButton1.Name = "RoundedButton1"
+        RoundedButton1.Size = New Size(89, 32)
+        RoundedButton1.TabIndex = 38
+        RoundedButton1.Text = "Logout"
+        RoundedButton1.UseVisualStyleBackColor = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
+        Label6.Location = New Point(445, 28)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(60, 22)
+        Label6.TabIndex = 37
+        Label6.Text = "Home"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
+        Label5.Location = New Point(618, 28)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(69, 22)
+        Label5.TabIndex = 36
+        Label5.Text = "History"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
+        Label4.Location = New Point(535, 28)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(61, 22)
+        Label4.TabIndex = 35
+        Label4.Text = "About"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Location = New Point(28, 25)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(42, 33)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 28
+        PictureBox1.TabStop = False
+        ' 
+        ' RoundedButton2
+        ' 
+        RoundedButton2.BackColor = Color.SlateBlue
+        RoundedButton2.CornerRadius = 10
+        RoundedButton2.FlatStyle = FlatStyle.Popup
+        RoundedButton2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton2.ForeColor = SystemColors.Control
+        RoundedButton2.Location = New Point(305, 404)
+        RoundedButton2.Name = "RoundedButton2"
+        RoundedButton2.Size = New Size(182, 40)
+        RoundedButton2.TabIndex = 39
+        RoundedButton2.Text = "Cetak Hasil"
+        RoundedButton2.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(328, 82)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(129, 133)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 40
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(-10, 301)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(209, 176)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 41
+        PictureBox3.TabStop = False
+        ' 
         ' Hasil
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(707, 494)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(834, 467)
         Controls.Add(PictureBox2)
+        Controls.Add(RoundedButton2)
+        Controls.Add(RoundedButton1)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(Label4)
         Controls.Add(Label2)
         Controls.Add(Label3)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
+        Controls.Add(PictureBox3)
         Name = "Hasil"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Hasil"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents RoundedButton2 As RoundedButton
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

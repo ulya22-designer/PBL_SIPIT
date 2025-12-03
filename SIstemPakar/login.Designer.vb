@@ -84,7 +84,7 @@ Partial Class login
         TextBox1.BackColor = Color.FromArgb(CByte(251), CByte(241), CByte(255))
         TextBox1.BorderStyle = BorderStyle.None
         TextBox1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(2, 14)
+        TextBox1.Location = New Point(2, 17)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(326, 22)
         TextBox1.TabIndex = 4
@@ -94,7 +94,7 @@ Partial Class login
         TextBox2.BackColor = Color.FromArgb(CByte(249), CByte(234), CByte(255))
         TextBox2.BorderStyle = BorderStyle.None
         TextBox2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox2.Location = New Point(3, 15)
+        TextBox2.Location = New Point(3, 18)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(323, 22)
         TextBox2.TabIndex = 5
@@ -129,7 +129,7 @@ Partial Class login
         Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.Control
-        Button1.Location = New Point(406, 369)
+        Button1.Location = New Point(602, 381)
         Button1.Name = "Button1"
         Button1.Size = New Size(182, 40)
         Button1.TabIndex = 21
@@ -143,7 +143,7 @@ Partial Class login
         Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button3.ForeColor = SystemColors.Control
-        Button3.Location = New Point(601, 369)
+        Button3.Location = New Point(404, 381)
         Button3.Name = "Button3"
         Button3.Size = New Size(181, 40)
         Button3.TabIndex = 22

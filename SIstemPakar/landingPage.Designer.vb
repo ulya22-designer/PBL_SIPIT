@@ -26,19 +26,20 @@ Partial Class landingPage
         Label2 = New Label()
         Label3 = New Label()
         PictureBox1 = New PictureBox()
-        PictureBox2 = New PictureBox()
         PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
         RoundedButton1 = New RoundedButton()
         RoundedButton2 = New RoundedButton()
+        PictureBox4 = New PictureBox()
+        PictureBox2 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
@@ -68,19 +69,9 @@ Partial Class landingPage
         PictureBox1.TabIndex = 15
         PictureBox1.TabStop = False
         ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(425, -49)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(421, 558)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 16
-        PictureBox2.TabStop = False
-        ' 
         ' PictureBox3
         ' 
+        PictureBox3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         PictureBox3.BackColor = Color.Transparent
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
         PictureBox3.Location = New Point(-2, 297)
@@ -90,19 +81,9 @@ Partial Class landingPage
         PictureBox3.TabIndex = 17
         PictureBox3.TabStop = False
         ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(12, 92)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(325, 140)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 18
-        PictureBox4.TabStop = False
-        ' 
         ' RoundedButton1
         ' 
+        RoundedButton1.Anchor = AnchorStyles.None
         RoundedButton1.BackColor = Color.SlateBlue
         RoundedButton1.CornerRadius = 10
         RoundedButton1.FlatStyle = FlatStyle.Popup
@@ -117,6 +98,7 @@ Partial Class landingPage
         ' 
         ' RoundedButton2
         ' 
+        RoundedButton2.Anchor = AnchorStyles.None
         RoundedButton2.BackColor = SystemColors.Desktop
         RoundedButton2.CornerRadius = 10
         RoundedButton2.FlatStyle = FlatStyle.Popup
@@ -129,29 +111,54 @@ Partial Class landingPage
         RoundedButton2.Text = "Keluar"
         RoundedButton2.UseVisualStyleBackColor = False
         ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(12, 98)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(329, 134)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 21
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(417, -16)
+        PictureBox2.Margin = New Padding(0)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(427, 489)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 22
+        PictureBox2.TabStop = False
+        ' 
         ' landingPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
+        AutoSize = True
         BackColor = SystemColors.Window
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(834, 467)
+        Controls.Add(PictureBox4)
         Controls.Add(Label2)
         Controls.Add(RoundedButton2)
         Controls.Add(RoundedButton1)
-        Controls.Add(PictureBox4)
         Controls.Add(PictureBox1)
         Controls.Add(Label3)
-        Controls.Add(PictureBox2)
         Controls.Add(PictureBox3)
+        Controls.Add(PictureBox2)
+        MaximizeBox = False
         Name = "landingPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Landing"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -159,10 +166,10 @@ Partial Class landingPage
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents RoundedButton1 As RoundedButton
     Friend WithEvents RoundedButton2 As RoundedButton
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 
 End Class

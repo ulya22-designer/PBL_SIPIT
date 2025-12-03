@@ -1,80 +1,73 @@
-﻿Imports System.Data.SqlClient
-Imports Microsoft.Data.SqlClient
+﻿Imports Microsoft.Data.SqlClient
 
 Public Class ForgotPassword
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ' === SUBMIT ===
+    Private Sub ForgotPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
+    End Sub
 
-        Dim username As String = TextBox1.Text.Trim()
-        Dim newpass As String = TextBox2.Text.Trim()
-        Dim confirmpass As String = TextBox3.Text.Trim()
+    ' Tombol Reset Password
+    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
+        Dim username = TextBox5.Text.Trim
+        Dim newpass = TextBox4.Text.Trim
+        Dim confirmpass = TextBox6.Text.Trim
 
-        ' Validasi field kosong
+        ' Validasi input
         If username = "" Or newpass = "" Or confirmpass = "" Then
             MessageBox.Show("Semua field harus diisi!", "Peringatan",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
-        ' Validasi password cocok
         If newpass <> confirmpass Then
             MessageBox.Show("Password dan konfirmasi tidak sama!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
-        ' Hash password baru (WAJIB karena login juga pakai hashing)
-        Dim hashedPass As String = HashPassword(newpass)
-
-        Dim conn As SqlConnection = GetConnection()
+        Dim hashedPass = HashPassword(newpass)
 
         Try
-            conn.Open()
+            Using conn = GetConnection()
+                conn.Open()
 
-            ' CEK apakah username ada
-            Dim checkCmd As New SqlCommand("
-                SELECT COUNT(*) FROM [User] WHERE nama=@nama
-            ", conn)
+                ' Cek apakah user ada
+                Dim checkQuery = "SELECT user_id FROM [User] WHERE nama=@nama"
+                Dim checkCmd As New SqlCommand(checkQuery, conn)
+                checkCmd.Parameters.AddWithValue("@nama", username)
 
-            checkCmd.Parameters.AddWithValue("@nama", username)
+                Dim userIdObj = checkCmd.ExecuteScalar()
 
-            Dim count As Integer = CInt(checkCmd.ExecuteScalar())
+                If userIdObj Is Nothing Then
+                    MessageBox.Show("Username tidak ditemukan!", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                End If
 
-            If count = 0 Then
-                MessageBox.Show("Username tidak ditemukan!", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Exit Sub
-            End If
+                ' Update password
+                Dim updateQuery = "
+                    UPDATE [User] SET password=@pass WHERE user_id=@id
+                "
+                Dim updateCmd As New SqlCommand(updateQuery, conn)
+                updateCmd.Parameters.AddWithValue("@pass", hashedPass)
+                updateCmd.Parameters.AddWithValue("@id", CInt(userIdObj))
+                updateCmd.ExecuteNonQuery()
 
-            ' UPDATE PASSWORD
-            Dim updateCmd As New SqlCommand("
-                UPDATE [User] SET Password=@pass WHERE nama=@nama
-            ", conn)
+                MessageBox.Show("Password berhasil direset!", "Berhasil",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            updateCmd.Parameters.AddWithValue("@pass", hashedPass)
-            updateCmd.Parameters.AddWithValue("@nama", username)
-            updateCmd.ExecuteNonQuery()
-
-            MessageBox.Show("Password berhasil direset!", "Sukses",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Dim f As New login()
-            f.Show()
-            Me.Close()
+                login.Show()
+                Close()
+            End Using
 
         Catch ex As Exception
             MessageBox.Show("Terjadi kesalahan: " & ex.Message)
-        Finally
-            conn.Close()
         End Try
-
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' === KEMBALI ===
-        Dim f As New login()
-        f.Show()
+    ' Tombol kembali ke login
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        login.Show()
         Me.Close()
     End Sub
 

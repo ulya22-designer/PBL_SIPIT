@@ -4,6 +4,7 @@ Imports Microsoft.Data.SqlClient
 Public Class login
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisableMaximize(Me)
         Me.StartPosition = FormStartPosition.CenterScreen
         TextBox2.UseSystemPasswordChar = True
     End Sub
@@ -35,7 +36,6 @@ Public Class login
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
 
                 If rd.Read() Then
-
                     CurrentUserID = CInt(rd("user_id"))
                     CurrentUserName = rd("nama").ToString()
 
@@ -49,7 +49,6 @@ Public Class login
                                     "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     Dim f As New Home()
-                    f.userId = CurrentUserID
                     f.Show()
                     Me.Hide()
 
@@ -60,7 +59,6 @@ Public Class login
 
             End Using
         End Using
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
