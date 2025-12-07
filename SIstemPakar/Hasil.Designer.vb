@@ -57,7 +57,7 @@ Partial Class Hasil
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(155, 228)
+        Label3.Location = New Point(172, 228)
         Label3.Name = "Label3"
         Label3.Size = New Size(424, 61)
         Label3.TabIndex = 29
@@ -68,7 +68,7 @@ Partial Class Hasil
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(110, 314)
+        Label2.Location = New Point(172, 314)
         Label2.Name = "Label2"
         Label2.Size = New Size(151, 24)
         Label2.TabIndex = 30
