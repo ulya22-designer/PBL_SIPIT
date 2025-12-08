@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Security.Cryptography
+Imports System.Text
 Imports Microsoft.Data.SqlClient
 
 Public Class login
@@ -9,6 +11,9 @@ Public Class login
         TextBox2.UseSystemPasswordChar = True
     End Sub
 
+    ' ============================
+    ' LOGIN BUTTON
+    ' ============================
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim username As String = TextBox1.Text.Trim()
         Dim password As String = TextBox2.Text.Trim()
@@ -19,6 +24,7 @@ Public Class login
             Exit Sub
         End If
 
+        ' HASH PASSWORD
         Dim hashed As String = HashPassword(password)
 
         Using conn As New SqlConnection(connStr)
@@ -36,6 +42,7 @@ Public Class login
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
 
                 If rd.Read() Then
+                    ' ✅ SET USER GLOBAL
                     CurrentUserID = CInt(rd("user_id"))
                     CurrentUserName = rd("nama").ToString()
 
@@ -45,22 +52,51 @@ Public Class login
                         CurrentUserFoto = Nothing
                     End If
 
-                    MessageBox.Show("Login berhasil! Selamat datang " & username,
-                                    "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ' AMBIL ROLE 
+                    Dim role As String = rd("role").ToString().Trim().ToLower()
 
-                    Dim f As New Home()
-                    f.Show()
+                    MessageBox.Show("Login berhasil! Selamat datang " & username & vbCrLf &
+                    "Role terdeteksi: " & role,
+                    "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' ARAHKAN SESUAI ROLE
+                    If role = "admin" Then
+                        Dim a As New adminPanel()
+                        a.Show()
+                    Else
+                        Dim f As New Home()
+                        f.Show()
+                    End If
+
                     Me.Hide()
-
                 Else
                     MessageBox.Show("Username atau password salah!", "Gagal",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
-
             End Using
         End Using
     End Sub
 
+    ' ============================
+    ' HASH FUNCTION SHA-256
+    ' ============================
+    Private Function HashPassword(plain As String) As String
+        Using sha As SHA256 = SHA256.Create()
+            Dim bytes As Byte() = Encoding.UTF8.GetBytes(plain)
+            Dim hash As Byte() = sha.ComputeHash(bytes)
+            Dim sb As New StringBuilder()
+
+            For Each b As Byte In hash
+                sb.Append(b.ToString("x2"))
+            Next
+
+            Return sb.ToString()
+        End Using
+    End Function
+
+    ' ============================
+    ' BUTTON NAVIGASI
+    ' ============================
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim lp As New landingPage()
         lp.Show()

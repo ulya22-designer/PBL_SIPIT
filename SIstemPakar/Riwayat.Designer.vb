@@ -83,7 +83,7 @@ Partial Class Riwayat
         Button3.Name = "Button3"
         Button3.Size = New Size(119, 40)
         Button3.TabIndex = 32
-        Button3.Text = "Delete"
+        Button3.Text = "Hapus"
         Button3.UseVisualStyleBackColor = False
         ' 
         ' RoundedButton1

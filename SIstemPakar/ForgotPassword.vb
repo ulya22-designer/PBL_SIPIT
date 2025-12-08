@@ -7,10 +7,10 @@ Public Class ForgotPassword
     End Sub
 
     ' Tombol Reset Password
-    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
-        Dim username = TextBox5.Text.Trim
-        Dim newpass = TextBox4.Text.Trim
-        Dim confirmpass = TextBox6.Text.Trim
+    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim username = TextBox1.Text.Trim
+        Dim newpass = TextBox2.Text.Trim
+        Dim confirmpass = TextBox3.Text.Trim
 
         ' Validasi input
         If username = "" Or newpass = "" Or confirmpass = "" Then
@@ -66,7 +66,7 @@ Public Class ForgotPassword
     End Sub
 
     ' Tombol kembali ke login
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button2.Click
         login.Show()
         Me.Close()
     End Sub
