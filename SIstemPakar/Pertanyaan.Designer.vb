@@ -41,8 +41,10 @@ Partial Class Pertanyaan
         Label4 = New Label()
         PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
+        Panel1 = New Panel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
@@ -51,7 +53,7 @@ Partial Class Pertanyaan
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(579, 339)
+        Button1.Location = New Point(660, 344)
         Button1.Name = "Button1"
         Button1.Size = New Size(106, 36)
         Button1.TabIndex = 14
@@ -63,7 +65,7 @@ Partial Class Pertanyaan
         Button2.BackColor = SystemColors.Desktop
         Button2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = SystemColors.ButtonHighlight
-        Button2.Location = New Point(132, 339)
+        Button2.Location = New Point(70, 339)
         Button2.Name = "Button2"
         Button2.Size = New Size(106, 41)
         Button2.TabIndex = 15
@@ -125,7 +127,7 @@ Partial Class Pertanyaan
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(98, 224)
+        Label2.Location = New Point(281, 39)
         Label2.Name = "Label2"
         Label2.Size = New Size(125, 24)
         Label2.TabIndex = 24
@@ -168,7 +170,7 @@ Partial Class Pertanyaan
         Button10.FlatStyle = FlatStyle.Flat
         Button10.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button10.ForeColor = SystemColors.ButtonHighlight
-        Button10.Location = New Point(362, 399)
+        Button10.Location = New Point(385, 398)
         Button10.Name = "Button10"
         Button10.Size = New Size(91, 36)
         Button10.TabIndex = 28
@@ -246,6 +248,15 @@ Partial Class Pertanyaan
         PictureBox3.TabIndex = 37
         PictureBox3.TabStop = False
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.Controls.Add(Label2)
+        Panel1.Location = New Point(70, 200)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(685, 100)
+        Panel1.TabIndex = 38
+        ' 
         ' Pertanyaan
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -261,7 +272,6 @@ Partial Class Pertanyaan
         Controls.Add(Button10)
         Controls.Add(Button9)
         Controls.Add(Label1)
-        Controls.Add(Label2)
         Controls.Add(Button7)
         Controls.Add(Button8)
         Controls.Add(Button6)
@@ -270,12 +280,15 @@ Partial Class Pertanyaan
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
+        Controls.Add(Panel1)
         Controls.Add(PictureBox3)
         Name = "Pertanyaan"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Questions"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -297,4 +310,5 @@ Partial Class Pertanyaan
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel1 As Panel
 End Class

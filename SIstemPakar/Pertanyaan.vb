@@ -12,6 +12,10 @@ Public Class Pertanyaan
     Dim defaultYaColor As Color
     Dim defaultTidakColor As Color
 
+
+    ' ====================================================
+    ' CLEAR JAWABAN
+    ' ====================================================
     Private Sub ResetJawaban()
         For i As Integer = 0 To 4
             jawaban(i) = Nothing
@@ -23,12 +27,13 @@ Public Class Pertanyaan
     End Sub
 
 
+    ' ====================================================
+    ' FORM LOAD
+    ' ====================================================
     Private Sub Pertanyaan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DisableMaximize(Me)
-
         Me.StartPosition = FormStartPosition.CenterScreen
 
-        ' simpan warna awal tombol YA & TIDAK
         defaultYaColor = Button1.BackColor
         defaultTidakColor = Button2.BackColor
 
@@ -38,7 +43,7 @@ Public Class Pertanyaan
             PictureBox1.Image = ByteArrayToImage(CurrentUserFoto)
         End If
 
-        ' foto bulat
+        ' foto jadi bulat
         Dim gp As New GraphicsPath()
         gp.AddEllipse(0, 0, PictureBox1.Width - 1, PictureBox1.Height - 1)
         PictureBox1.Region = New Region(gp)
@@ -52,9 +57,14 @@ Public Class Pertanyaan
     End Sub
 
 
+
+    ' ====================================================
+    ' LOAD DATA PERTANYAAN DARI DATABASE
+    ' ====================================================
     Private Sub LoadPertanyaan()
         Using conn As New SqlConnection(connStr)
             conn.Open()
+
             Dim query As String = "SELECT teks_pertanyaan FROM Pertanyaan ORDER BY pertanyaan_id ASC"
 
             Using cmd As New SqlCommand(query, conn)
@@ -67,6 +77,22 @@ Public Class Pertanyaan
     End Sub
 
 
+
+    ' ====================================================
+    ' CENTER TEXT KE TENGAH PANEL
+    ' ====================================================
+    Private Sub CenterLabel()
+        If Label2 Is Nothing OrElse Panel1 Is Nothing Then Exit Sub
+
+        Label2.Left = (Panel1.Width - Label2.Width) \ 2
+        Label2.Top = (Panel1.Height - Label2.Height) \ 2
+    End Sub
+
+
+
+    ' ====================================================
+    ' TAMPILKAN PERTANYAAN
+    ' ====================================================
     Private Sub TampilkanPertanyaan(index As Integer)
         currentIndex = index
 
@@ -75,6 +101,7 @@ Public Class Pertanyaan
         Label2.TextAlign = ContentAlignment.MiddleCenter
         Label2.Text = listPertanyaan(index)
 
+        CenterLabel()
         UpdateNavigasi()
         UpdateNomorButton()
         UpdateSubmitButton()
@@ -82,12 +109,20 @@ Public Class Pertanyaan
     End Sub
 
 
+
+    ' ====================================================
+    ' UPDATE NAVIGASI
+    ' ====================================================
     Private Sub UpdateNavigasi()
         Button9.Enabled = (currentIndex > 0)
         Button3.Enabled = (currentIndex < listPertanyaan.Count - 1)
     End Sub
 
 
+
+    ' ====================================================
+    ' UPDATE NOMOR BUTTON
+    ' ====================================================
     Private Sub UpdateNomorButton()
         Dim buttons As Button() = {Button4, Button5, Button6, Button8, Button7}
 
@@ -104,10 +139,12 @@ Public Class Pertanyaan
         UpdateSubmitButton()
     End Sub
 
-    ' HIGHLIGHT YA/TIDAK 
-    Private Sub UpdateJawabanButton()
 
-        ' reset ke warna default desain
+
+    ' ====================================================
+    ' UPDATE HIGHLIGHT TOMBOL YA / TIDAK
+    ' ====================================================
+    Private Sub UpdateJawabanButton()
         Button1.BackColor = defaultYaColor
         Button2.BackColor = defaultTidakColor
 
@@ -116,12 +153,14 @@ Public Class Pertanyaan
         ElseIf jawaban(currentIndex) = "tidak" Then
             Button2.BackColor = Color.LightCoral
         End If
-
     End Sub
 
-    ' SUBMIT BUTTON
-    Private Sub UpdateSubmitButton()
 
+
+    ' ====================================================
+    ' SHOW / HIDE SUBMIT BUTTON
+    ' ====================================================
+    Private Sub UpdateSubmitButton()
         Dim semuaTerisi As Boolean = True
 
         For i As Integer = 0 To 4
@@ -132,10 +171,13 @@ Public Class Pertanyaan
         Next
 
         Button10.Visible = (semuaTerisi AndAlso currentIndex = 4)
-
     End Sub
 
-    ' BUTTON NOMOR
+
+
+    ' ====================================================
+    ' BUTTON NUMBERS
+    ' ====================================================
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         TampilkanPertanyaan(0)
     End Sub
@@ -156,7 +198,11 @@ Public Class Pertanyaan
         TampilkanPertanyaan(4)
     End Sub
 
-    ' NAVIGASI KIRI KANAN
+
+
+    ' ====================================================
+    ' NEXT & PREV
+    ' ====================================================
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         If currentIndex > 0 Then
             TampilkanPertanyaan(currentIndex - 1)
@@ -169,7 +215,11 @@ Public Class Pertanyaan
         End If
     End Sub
 
-    ' JAWAB YA
+
+
+    ' ====================================================
+    ' JAWAB YA / TIDAK
+    ' ====================================================
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         jawaban(currentIndex) = "ya"
         UpdateJawabanButton()
@@ -177,7 +227,6 @@ Public Class Pertanyaan
         NextOrFinish()
     End Sub
 
-    ' JAWAB TIDAK
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         jawaban(currentIndex) = "tidak"
         UpdateJawabanButton()
@@ -186,8 +235,8 @@ Public Class Pertanyaan
     End Sub
 
 
-    Private Sub NextOrFinish()
 
+    Private Sub NextOrFinish()
         If currentIndex < listPertanyaan.Count - 1 Then
             currentIndex += 1
             TampilkanPertanyaan(currentIndex)
@@ -195,12 +244,14 @@ Public Class Pertanyaan
         End If
 
         UpdateSubmitButton()
-
     End Sub
 
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
 
+    ' ====================================================
+    ' SUBMIT
+    ' ====================================================
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         For i = 0 To 4
             If jawaban(i) Is Nothing Then
                 MessageBox.Show("Pertanyaan nomor " & (i + 1) & " belum dijawab!")
@@ -211,21 +262,23 @@ Public Class Pertanyaan
         Dim f As New Hasil(jawaban, CurrentUserID)
         f.Show()
         Me.Hide()
-
     End Sub
 
-    ' BUTTON KEMBALI KE HOME
+
+
+    ' ====================================================
+    ' KEMBALI KE HOME
+    ' ====================================================
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Dim result = MessageBox.Show(
         "Apakah Anda yakin ingin meninggalkan halaman ini? Semua progress akan hilang.",
         "Konfirmasi",
         MessageBoxButtons.YesNo,
         MessageBoxIcon.Warning
-    )
+        )
 
         If result = DialogResult.Yes Then
             ResetJawaban()
-
             Dim hm As New Home()
             hm.Show()
             Me.Hide()
@@ -233,29 +286,16 @@ Public Class Pertanyaan
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        Dim result = MessageBox.Show(
-        "Apakah Anda yakin ingin meninggalkan halaman ini? Semua progress akan hilang.",
-        "Konfirmasi",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Warning
-    )
-
-        If result = DialogResult.Yes Then
-            ResetJawaban()
-
-            Dim hm As New Home()
-            hm.Show()
-            Me.Hide()
-        End If
+        Label6_Click(sender, e)
     End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
         Dim result = MessageBox.Show(
-        "Apakah Anda yakin ingin meninggalkan halaman ini? Semua progress akan hilang.",
+        "Apakah Anda yakin ingin mengulangi pertanyaan?",
         "Konfirmasi",
         MessageBoxButtons.YesNo,
         MessageBoxIcon.Warning
-    )
+        )
 
         If result = DialogResult.Yes Then
             ResetJawaban()
@@ -264,13 +304,31 @@ Public Class Pertanyaan
             p.userId = Me.userId
             p.Show()
             Me.Hide()
-
         End If
     End Sub
 
+
+
+    ' ====================================================
+    ' BUTTON KEMBALI KE LANDING PAGE
+    ' ====================================================
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
         Dim f As New landingPage()
         f.Show()
         Me.Hide()
     End Sub
+
+
+
+    ' ====================================================
+    ' EVENT PANEL & LABEL UNTUK KEEP CENTER
+    ' ====================================================
+    Private Sub Panel1_Resize(sender As Object, e As EventArgs) Handles Panel1.Resize
+        CenterLabel()
+    End Sub
+
+    Private Sub Label2_SizeChanged(sender As Object, e As EventArgs) Handles Label2.SizeChanged
+        CenterLabel()
+    End Sub
+
 End Class

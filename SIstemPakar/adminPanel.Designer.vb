@@ -26,8 +26,6 @@ Partial Class adminPanel
         PictureBox4 = New PictureBox()
         Button3 = New RoundedButton()
         Panel2 = New Panel()
-        Label6 = New Label()
-        Label5 = New Label()
         Label4 = New Label()
         Label1 = New Label()
         PictureBox1 = New PictureBox()
@@ -38,10 +36,26 @@ Partial Class adminPanel
         Label3 = New Label()
         RoundedButton2 = New RoundedButton()
         RoundedButton3 = New RoundedButton()
+        Panel1 = New Panel()
+        PictureBox3 = New PictureBox()
+        PictureBox6 = New PictureBox()
+        Label7 = New Label()
+        RoundedButton6 = New RoundedButton()
+        PictureBox5 = New PictureBox()
+        Label6 = New Label()
+        RoundedButton5 = New RoundedButton()
+        Label5 = New Label()
+        RoundedButton4 = New RoundedButton()
+        Panel3 = New Panel()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
         SuspendLayout()
         ' 
         ' PictureBox4
@@ -72,34 +86,10 @@ Partial Class adminPanel
         ' Panel2
         ' 
         Panel2.BackColor = Color.MediumVioletRed
-        Panel2.Location = New Point(569, 56)
+        Panel2.Location = New Point(494, 56)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(115, 3)
         Panel2.TabIndex = 30
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label6.Location = New Point(304, 28)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(60, 22)
-        Label6.TabIndex = 33
-        Label6.Text = "Home"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label5.Location = New Point(477, 28)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(69, 22)
-        Label5.TabIndex = 32
-        Label5.Text = "History"
         ' 
         ' Label4
         ' 
@@ -107,7 +97,7 @@ Partial Class adminPanel
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label4.Location = New Point(390, 28)
+        Label4.Location = New Point(628, 28)
         Label4.Name = "Label4"
         Label4.Size = New Size(61, 22)
         Label4.TabIndex = 31
@@ -118,19 +108,21 @@ Partial Class adminPanel
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label1.Location = New Point(71, 34)
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(57, 31)
         Label1.Name = "Label1"
-        Label1.Size = New Size(91, 20)
+        Label1.Size = New Size(57, 20)
         Label1.TabIndex = 28
-        Label1.Text = "Username"
+        Label1.Text = "admin"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(30, 26)
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(14, 24)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(37, 33)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 29
         PictureBox1.TabStop = False
         ' 
@@ -140,7 +132,7 @@ Partial Class adminPanel
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.MediumVioletRed
-        Label2.Location = New Point(569, 28)
+        Label2.Location = New Point(494, 28)
         Label2.Name = "Label2"
         Label2.Size = New Size(118, 22)
         Label2.TabIndex = 35
@@ -153,7 +145,7 @@ Partial Class adminPanel
         RoundedButton1.FlatStyle = FlatStyle.Popup
         RoundedButton1.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = SystemColors.Control
-        RoundedButton1.Location = New Point(356, 403)
+        RoundedButton1.Location = New Point(440, 405)
         RoundedButton1.Name = "RoundedButton1"
         RoundedButton1.Size = New Size(119, 40)
         RoundedButton1.TabIndex = 39
@@ -163,17 +155,17 @@ Partial Class adminPanel
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(55, 223)
+        DataGridView1.Location = New Point(219, 223)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(719, 162)
+        DataGridView1.Size = New Size(569, 162)
         DataGridView1.TabIndex = 38
         ' 
         ' PictureBox2
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(370, 78)
+        PictureBox2.Location = New Point(456, 77)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(79, 76)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
@@ -184,12 +176,12 @@ Partial Class adminPanel
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(234, 168)
+        Label3.Font = New Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(61, 4)
         Label3.Name = "Label3"
-        Label3.Size = New Size(351, 42)
+        Label3.Size = New Size(79, 33)
         Label3.TabIndex = 36
-        Label3.Text = "RIWAYAT SURVEY"
+        Label3.Text = "Teks"
         ' 
         ' RoundedButton2
         ' 
@@ -198,7 +190,7 @@ Partial Class adminPanel
         RoundedButton2.FlatStyle = FlatStyle.Popup
         RoundedButton2.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = SystemColors.Control
-        RoundedButton2.Location = New Point(538, 403)
+        RoundedButton2.Location = New Point(663, 405)
         RoundedButton2.Name = "RoundedButton2"
         RoundedButton2.Size = New Size(119, 40)
         RoundedButton2.TabIndex = 40
@@ -212,12 +204,149 @@ Partial Class adminPanel
         RoundedButton3.FlatStyle = FlatStyle.Popup
         RoundedButton3.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton3.ForeColor = SystemColors.Control
-        RoundedButton3.Location = New Point(166, 403)
+        RoundedButton3.Location = New Point(219, 405)
         RoundedButton3.Name = "RoundedButton3"
         RoundedButton3.Size = New Size(119, 40)
         RoundedButton3.TabIndex = 41
         RoundedButton3.Text = "Tambah"
         RoundedButton3.UseVisualStyleBackColor = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Controls.Add(PictureBox6)
+        Panel1.Controls.Add(Label7)
+        Panel1.Controls.Add(RoundedButton6)
+        Panel1.Controls.Add(PictureBox5)
+        Panel1.Controls.Add(Label6)
+        Panel1.Controls.Add(RoundedButton5)
+        Panel1.Controls.Add(Label5)
+        Panel1.Controls.Add(RoundedButton4)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(176, 467)
+        Panel1.TabIndex = 43
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.MediumPurple
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(17, 159)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(28, 30)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 51
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.BackColor = Color.MediumVioletRed
+        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
+        PictureBox6.Location = New Point(17, 302)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(28, 30)
+        PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox6.TabIndex = 48
+        PictureBox6.TabStop = False
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.BackColor = Color.MediumVioletRed
+        Label7.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.ForeColor = Color.White
+        Label7.Location = New Point(46, 306)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(68, 22)
+        Label7.TabIndex = 49
+        Label7.Text = "Aturan"
+        ' 
+        ' RoundedButton6
+        ' 
+        RoundedButton6.BackColor = Color.MediumVioletRed
+        RoundedButton6.CornerRadius = 10
+        RoundedButton6.FlatStyle = FlatStyle.Popup
+        RoundedButton6.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton6.ForeColor = SystemColors.Control
+        RoundedButton6.Location = New Point(11, 298)
+        RoundedButton6.Name = "RoundedButton6"
+        RoundedButton6.Size = New Size(150, 40)
+        RoundedButton6.TabIndex = 50
+        RoundedButton6.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackColor = Color.MediumOrchid
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(17, 231)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(28, 30)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 45
+        PictureBox5.TabStop = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.MediumOrchid
+        Label6.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = Color.White
+        Label6.Location = New Point(46, 235)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(68, 22)
+        Label6.TabIndex = 46
+        Label6.Text = "Profesi"
+        ' 
+        ' RoundedButton5
+        ' 
+        RoundedButton5.BackColor = Color.MediumOrchid
+        RoundedButton5.CornerRadius = 10
+        RoundedButton5.FlatStyle = FlatStyle.Popup
+        RoundedButton5.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton5.ForeColor = SystemColors.Control
+        RoundedButton5.Location = New Point(11, 227)
+        RoundedButton5.Name = "RoundedButton5"
+        RoundedButton5.Size = New Size(150, 40)
+        RoundedButton5.TabIndex = 47
+        RoundedButton5.UseVisualStyleBackColor = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.MediumPurple
+        Label5.Font = New Font("Montserrat SemiBold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.White
+        Label5.Location = New Point(46, 163)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(107, 22)
+        Label5.TabIndex = 44
+        Label5.Text = "Pertanyaan"
+        ' 
+        ' RoundedButton4
+        ' 
+        RoundedButton4.BackColor = Color.MediumPurple
+        RoundedButton4.CornerRadius = 10
+        RoundedButton4.FlatStyle = FlatStyle.Popup
+        RoundedButton4.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton4.ForeColor = SystemColors.Control
+        RoundedButton4.Location = New Point(11, 155)
+        RoundedButton4.Name = "RoundedButton4"
+        RoundedButton4.Size = New Size(150, 40)
+        RoundedButton4.TabIndex = 44
+        RoundedButton4.UseVisualStyleBackColor = False
+        ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.Transparent
+        Panel3.Controls.Add(Label3)
+        Panel3.Location = New Point(395, 163)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(200, 40)
+        Panel3.TabIndex = 44
         ' 
         ' adminPanel
         ' 
@@ -226,27 +355,32 @@ Partial Class adminPanel
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(834, 467)
+        Controls.Add(Panel3)
+        Controls.Add(Panel1)
         Controls.Add(RoundedButton3)
         Controls.Add(RoundedButton2)
         Controls.Add(RoundedButton1)
         Controls.Add(DataGridView1)
         Controls.Add(PictureBox2)
-        Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Button3)
         Controls.Add(Panel2)
-        Controls.Add(Label6)
-        Controls.Add(Label5)
         Controls.Add(Label4)
-        Controls.Add(Label1)
-        Controls.Add(PictureBox1)
         Controls.Add(PictureBox4)
         Name = "adminPanel"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "adminPanel"
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        Panel3.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
 
@@ -255,8 +389,6 @@ Partial Class adminPanel
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Button3 As RoundedButton
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
@@ -267,5 +399,16 @@ Partial Class adminPanel
     Friend WithEvents Label3 As Label
     Friend WithEvents RoundedButton2 As RoundedButton
     Friend WithEvents RoundedButton3 As RoundedButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents RoundedButton4 As RoundedButton
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents RoundedButton6 As RoundedButton
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents RoundedButton5 As RoundedButton
+    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel3 As Panel
 
 End Class
