@@ -11,10 +11,11 @@ Public Class login
         TextBox2.UseSystemPasswordChar = True
     End Sub
 
-    ' ============================
+    ' ======================================================
     ' LOGIN BUTTON
-    ' ============================
+    ' ======================================================
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         Dim username As String = TextBox1.Text.Trim()
         Dim password As String = TextBox2.Text.Trim()
 
@@ -24,7 +25,7 @@ Public Class login
             Exit Sub
         End If
 
-        ' HASH PASSWORD
+        ' HASH password input user untuk verifikasi
         Dim hashed As String = HashPassword(password)
 
         Using conn As New SqlConnection(connStr)
@@ -42,7 +43,10 @@ Public Class login
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
 
                 If rd.Read() Then
-                    ' ✅ SET USER GLOBAL
+
+                    ' ======================================================
+                    ' SET GLOBAL USER (ID, NAMA, FOTO)
+                    ' ======================================================
                     CurrentUserID = CInt(rd("user_id"))
                     CurrentUserName = rd("nama").ToString()
 
@@ -52,34 +56,45 @@ Public Class login
                         CurrentUserFoto = Nothing
                     End If
 
-                    ' AMBIL ROLE 
-                    Dim role As String = rd("role").ToString().Trim().ToLower()
+                    ' ======================================================
+                    ' SET GLOBAL ROLE
+                    ' ======================================================
+                    If Not IsDBNull(rd("role")) Then
+                        CurrentUserRole = rd("role").ToString().Trim().ToLower()
+                    Else
+                        CurrentUserRole = "user"   ' fallback aman
+                    End If
 
-                    MessageBox.Show("Login berhasil! Selamat datang " & username & vbCrLf &
-                    "Role terdeteksi: " & role,
+                    MessageBox.Show("Login berhasil! Selamat datang " & username,
                     "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+
+                    ' ======================================================
                     ' ARAHKAN SESUAI ROLE
-                    If role = "admin" Then
-                        Dim a As New adminPanel()
-                        a.Show()
+                    ' ======================================================
+                    If CurrentUserRole = "admin" Then
+                        Dim admin As New adminPanel()
+                        admin.Show()
                     Else
                         Dim f As New Home()
                         f.Show()
                     End If
 
                     Me.Hide()
+
                 Else
                     MessageBox.Show("Username atau password salah!", "Gagal",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 End If
             End Using
         End Using
+
     End Sub
 
-    ' ============================
+
+    ' ======================================================
     ' HASH FUNCTION SHA-256
-    ' ============================
+    ' ======================================================
     Private Function HashPassword(plain As String) As String
         Using sha As SHA256 = SHA256.Create()
             Dim bytes As Byte() = Encoding.UTF8.GetBytes(plain)
@@ -94,9 +109,10 @@ Public Class login
         End Using
     End Function
 
-    ' ============================
-    ' BUTTON NAVIGASI
-    ' ============================
+
+    ' ======================================================
+    ' NAVIGASI
+    ' ======================================================
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim lp As New landingPage()
         lp.Show()

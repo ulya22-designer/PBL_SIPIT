@@ -12,23 +12,26 @@ Public Class register
         TextBox3.UseSystemPasswordChar = True   ' Sembunyikan password
     End Sub
 
-    ' Tombol Upload Foto
+    ' ======================================================
+    ' TOMBOL UPLOAD FOTO
+    ' ======================================================
     Private Sub btnUploadFoto_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim ofd As New OpenFileDialog()
         ofd.Title = "Pilih Foto Profil"
         ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
 
         If ofd.ShowDialog() = DialogResult.OK Then
-            ' >>> PERBAIKAN: PictureBox TIDAK diubah gambarnya
-            ' PictureBox1.Image = Image.FromFile(ofd.FileName)   ← DIHAPUS
-
             ' Foto hanya disimpan sebagai byte
             fotoBytes = IO.File.ReadAllBytes(ofd.FileName)
         End If
     End Sub
 
-    ' Tombol REGISTER
+
+    ' ======================================================
+    ' TOMBOL REGISTER
+    ' ======================================================
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
+
         Dim username As String = TextBox1.Text.Trim()
         Dim password As String = TextBox3.Text.Trim()
 
@@ -39,14 +42,16 @@ Public Class register
             Exit Sub
         End If
 
+        ' HASH PASSWORD
         Dim hashedPass As String = HashPassword(password)
 
         Using conn As New SqlConnection(connStr)
             conn.Open()
 
+            ' >>> UPDATE QUERY: tambah kolom role
             Dim query As String = "
-                INSERT INTO [User] (nama, password, foto)
-                VALUES (@nama, @password, @foto)
+                INSERT INTO [User] (nama, password, foto, role)
+                VALUES (@nama, @password, @foto, 'user')
             "
 
             Using cmd As New SqlCommand(query, conn)
@@ -75,9 +80,13 @@ Public Class register
 
             End Using
         End Using
+
     End Sub
 
-    ' Label: Sudah punya akun → ke login
+
+    ' ======================================================
+    ' NAVIGASI: Sudah punya akun → ke login
+    ' ======================================================
     Private Sub lblSudahAkun_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Dim log As New login()
         log.Show()
