@@ -4,20 +4,20 @@ Imports Microsoft.Data.SqlClient
 Public Class adminPanel
 
     Private Sub adminPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Default saat form dibuka → tampilkan Pertanyaan
         LoadPertanyaan()
     End Sub
 
-    ' ============================
-    '  CENTER LABEL DI PANEL3
-    ' ============================
+
+    ' ======================================================
+    '   CENTER LABEL TITLE
+    ' ======================================================
     Private Sub CenterLabelTitle()
         Label3.Left = (Panel3.Width - Label3.Width) \ 2
     End Sub
 
 
     ' ======================================================
-    '  FUNCTION PENGAMBIL DATA (DATA GRID VIEW)
+    '   FUNGSI GENERIK GET DATA
     ' ======================================================
     Private Function GetData(query As String) As DataTable
         Dim dt As New DataTable()
@@ -41,23 +41,27 @@ Public Class adminPanel
     End Function
 
 
+
     ' ======================================================
-    '  LOAD DATA PERTANYAAN
+    '   LOAD DATA PERTANYAAN
     ' ======================================================
     Private Sub LoadPertanyaan()
         Label3.Text = "Pertanyaan"
         CenterLabelTitle()
 
         Dim query As String =
-            "SELECT pertanyaan_id AS [ID], teks_pertanyaan AS [Pertanyaan] 
-             FROM Pertanyaan"
+            "SELECT pertanyaan_id AS [ID],
+                    teks_pertanyaan AS [Pertanyaan]
+             FROM Pertanyaan
+             ORDER BY pertanyaan_id"
 
         DataGridView1.DataSource = GetData(query)
     End Sub
 
 
+
     ' ======================================================
-    '  LOAD DATA PROFESI
+    '   LOAD DATA PROFESI
     ' ======================================================
     Private Sub LoadProfesi()
         Label3.Text = "Profesi"
@@ -67,65 +71,81 @@ Public Class adminPanel
             "SELECT profesi_id AS [ID],
                     nama_profesi AS [Nama Profesi],
                     deskripsi AS [Deskripsi]
-             FROM Profesi"
+             FROM Profesi
+             ORDER BY profesi_id"
 
         DataGridView1.DataSource = GetData(query)
     End Sub
 
 
+
     ' ======================================================
-    '  LOAD DATA ATURAN (JOIN PROFESI)
+    '   LOAD DATA ATURAN (RULE PATTERN)
     ' ======================================================
     Private Sub LoadAturan()
         Label3.Text = "Aturan"
         CenterLabelTitle()
 
         Dim query As String =
-        "SELECT A.rule_id AS [ID],
-                P.nama_profesi AS [Profesi],
-                A.o1_algoritma_dan_logika AS [O1 Logika],
-                A.o2_desain_relasional AS [O2 Relasional],
-                A.o3_arsitektur_dan_keamanan AS [O3 Keamanan],
-                A.o4_analisis_kebutuhan_pengguna AS [O4 Analisis],
-                A.o5_adaptif_dan_inovatif AS [O5 Inovatif],
-                A.Keterangan
+        "SELECT 
+             A.rule_id AS [ID],
+             P.nama_profesi AS [Profesi],
+             A.rule_pattern AS [Pola Rule],
+             A.Keterangan AS [Keterangan]
          FROM Aturan A
-         JOIN Profesi P ON A.profesi_id = P.profesi_id"
+         JOIN Profesi P ON A.profesi_id = P.profesi_id
+         ORDER BY A.rule_id"
 
         DataGridView1.DataSource = GetData(query)
     End Sub
 
 
+
     ' ======================================================
-    '  EVENT PADA TOMBOL
+    '   EVENT TOMBOL MENU
     ' ======================================================
 
-    ' Tombol PERTANYAAN
     Private Sub RoundedButton4_Click(sender As Object, e As EventArgs) Handles RoundedButton4.Click
         LoadPertanyaan()
     End Sub
 
-    ' Tombol PROFESI
     Private Sub RoundedButton5_Click(sender As Object, e As EventArgs) Handles RoundedButton5.Click
         LoadProfesi()
     End Sub
 
-    ' Tombol ATURAN
     Private Sub RoundedButton6_Click(sender As Object, e As EventArgs) Handles RoundedButton6.Click
         LoadAturan()
     End Sub
 
 
+
     ' ======================================================
-    ' AUTO CENTER SAAT PANEL DI-RESIZE
+    '   ABOUT (Label 4)
     ' ======================================================
-    Private Sub Panel3_Resize(sender As Object, e As EventArgs) Handles Panel3.Resize
-        CenterLabelTitle()
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        Dim f As New tentangKami()
+        f.Show()
+        Me.Hide()
     End Sub
 
+
+
+    ' ======================================================
+    '   NAVIGASI KEMBALI
+    ' ======================================================
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim f As New landingPage()
         f.Show()
         Me.Hide()
     End Sub
+
+
+
+    ' ======================================================
+    '   AUTO-CENTER TITLE SAAT RESIZE PANEL
+    ' ======================================================
+    Private Sub Panel3_Resize(sender As Object, e As EventArgs) Handles Panel3.Resize
+        CenterLabelTitle()
+    End Sub
+
 End Class
