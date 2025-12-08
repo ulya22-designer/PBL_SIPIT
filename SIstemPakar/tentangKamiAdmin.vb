@@ -3,71 +3,42 @@ Imports Microsoft.Data.SqlClient
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Drawing.Drawing2D
 
-Public Class tentangKami
+Public Class tentangKamiAdmin
 
     Private chartProfesi As Chart
 
-    Private Sub tentangKami_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub tentangKamiAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         DisableMaximize(Me)
 
         Me.StartPosition = FormStartPosition.CenterScreen
 
-        ' Tampilkan user 
-        Label2.Text = CurrentUserName
-
-        If CurrentUserFoto IsNot Nothing Then
-            PictureBox1.Image = ByteArrayToImage(CurrentUserFoto)
-        End If
-
-        ' Bikin foto bulat
-        Dim gp As New GraphicsPath()
-        gp.AddEllipse(0, 0, PictureBox1.Width - 1, PictureBox1.Height - 1)
-        PictureBox1.Region = New Region(gp)
-
-
-        ' Buat chart manual
+        ' Buat chart dan ambil data
         BuatChartProfesi()
-
-        ' Ambil data dari database ke chart
         LoadChartData()
 
     End Sub
 
-    '  DAFTAR PROFESI=
-    Private Sub IsiDaftarProfesi()
-
-        Dim teks As String =
-            "Daftar profesi dalam sistem SIPIT:" & Environment.NewLine & Environment.NewLine &
-            "• SENIOR PROGRAMMER – Ahli dalam logika, algoritma, dan struktur software." & Environment.NewLine & Environment.NewLine &
-            "• DATABASE ADMINISTRATOR – Menjaga keamanan, integritas, dan performa database." & Environment.NewLine & Environment.NewLine &
-            "• SOFTWARE DEVELOPER – Membuat software yang stabil dan efisien." & Environment.NewLine & Environment.NewLine &
-            "• SYSTEM ANALYST – Menganalisis kebutuhan bisnis dan merancang solusi teknologi."
-
-        Label3.Text = teks
-
-    End Sub
-
-    '  CHART 
+    ' ==================== CHART ====================
     Private Sub BuatChartProfesi()
 
         chartProfesi = New Chart()
-        chartProfesi.Dock = DockStyle.Fill     ' Chart otomatis ikut ukuran Panel
+        chartProfesi.Dock = DockStyle.Fill
         chartProfesi.BackColor = Color.WhiteSmoke
         chartProfesi.BorderlineDashStyle = ChartDashStyle.Solid
         chartProfesi.BorderlineColor = Color.Gray
         chartProfesi.BorderlineWidth = 1
 
-        ' Tambah chart area
         Dim area As New ChartArea("AreaUtama")
         chartProfesi.ChartAreas.Add(area)
 
-        ' Masukkan chart ke panel, bukan ke form
         Panel1.Controls.Clear()
         Panel1.Controls.Add(chartProfesi)
 
     End Sub
 
-    '  MENGISI DATA CHART DARI DATABASE
+
+    ' ================== LOAD DATA DARI DATABASE ==================
     Private Sub LoadChartData()
 
         chartProfesi.Series.Clear()
@@ -105,25 +76,15 @@ Public Class tentangKami
 
     End Sub
 
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Dim f As New adminPanel()
+        f.Show()
+        Me.Hide()
+    End Sub
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim f As New landingPage()
         f.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Dim f As New Home()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-        Dim f As New Riwayat()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
     End Sub
 End Class

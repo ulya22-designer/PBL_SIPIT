@@ -123,7 +123,7 @@ Public Class adminPanel
     '   ABOUT (Label 4)
     ' ======================================================
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        Dim f As New tentangKami()
+        Dim f As New tentangKamiAdmin()
         f.Show()
         Me.Hide()
     End Sub
@@ -148,4 +148,9 @@ Public Class adminPanel
         CenterLabelTitle()
     End Sub
 
+    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
+        Dim f As New CRUDpertanyaan()
+        f.Show()
+        Me.Hide()
+    End Sub
 End Class
