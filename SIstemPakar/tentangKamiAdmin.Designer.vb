@@ -54,9 +54,9 @@ Partial Class tentangKamiAdmin
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label2.Location = New Point(492, 26)
+        Label2.Location = New Point(562, 35)
         Label2.Name = "Label2"
-        Label2.Size = New Size(109, 20)
+        Label2.Size = New Size(134, 25)
         Label2.TabIndex = 40
         Label2.Text = "Admin Panel"
         ' 
@@ -67,9 +67,10 @@ Partial Class tentangKamiAdmin
         Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button3.ForeColor = SystemColors.Control
-        Button3.Location = New Point(711, 22)
+        Button3.Location = New Point(813, 29)
+        Button3.Margin = New Padding(3, 4, 3, 4)
         Button3.Name = "Button3"
-        Button3.Size = New Size(89, 32)
+        Button3.Size = New Size(102, 43)
         Button3.TabIndex = 39
         Button3.Text = "Logout"
         Button3.UseVisualStyleBackColor = False
@@ -80,9 +81,9 @@ Partial Class tentangKamiAdmin
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.MediumVioletRed
-        Label4.Location = New Point(626, 26)
+        Label4.Location = New Point(715, 35)
         Label4.Name = "Label4"
-        Label4.Size = New Size(57, 20)
+        Label4.Size = New Size(69, 25)
         Label4.TabIndex = 38
         Label4.Text = "About"
         ' 
@@ -92,9 +93,9 @@ Partial Class tentangKamiAdmin
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label1.Location = New Point(70, 28)
+        Label1.Location = New Point(80, 37)
         Label1.Name = "Label1"
-        Label1.Size = New Size(57, 20)
+        Label1.Size = New Size(70, 25)
         Label1.TabIndex = 61
         Label1.Text = "admin"
         ' 
@@ -102,9 +103,10 @@ Partial Class tentangKamiAdmin
         ' 
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(27, 21)
+        PictureBox1.Location = New Point(31, 28)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(37, 33)
+        PictureBox1.Size = New Size(42, 44)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 62
         PictureBox1.TabStop = False
@@ -112,32 +114,34 @@ Partial Class tentangKamiAdmin
         ' Panel2
         ' 
         Panel2.BackColor = Color.MediumVioletRed
-        Panel2.Location = New Point(620, 49)
+        Panel2.Location = New Point(709, 65)
+        Panel2.Margin = New Padding(3, 4, 3, 4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(65, 3)
+        Panel2.Size = New Size(74, 4)
         Panel2.TabIndex = 63
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
         Label9.BackColor = Color.Transparent
-        Label9.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(244, 421)
+        Label9.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label9.Location = New Point(279, 561)
         Label9.Name = "Label9"
-        Label9.Size = New Size(501, 23)
+        Label9.Size = New Size(574, 20)
         Label9.TabIndex = 78
         Label9.Text = "Menganalisis kebutuhan bisnis serta merancang solusi teknologi yang tepat."
         ' 
         ' RoundedButton4
         ' 
-        RoundedButton4.BackColor = Color.FromArgb(CByte(179), CByte(167), CByte(191))
+        RoundedButton4.BackColor = Color.SeaGreen
         RoundedButton4.CornerRadius = 10
         RoundedButton4.FlatStyle = FlatStyle.Popup
         RoundedButton4.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton4.ForeColor = SystemColors.Control
-        RoundedButton4.Location = New Point(29, 414)
+        RoundedButton4.Location = New Point(33, 552)
+        RoundedButton4.Margin = New Padding(3, 4, 3, 4)
         RoundedButton4.Name = "RoundedButton4"
-        RoundedButton4.Size = New Size(206, 32)
+        RoundedButton4.Size = New Size(235, 43)
         RoundedButton4.TabIndex = 77
         RoundedButton4.Text = "SYSTEM ANALYST"
         RoundedButton4.UseVisualStyleBackColor = False
@@ -146,23 +150,24 @@ Partial Class tentangKamiAdmin
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
-        Label8.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(244, 383)
+        Label8.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label8.Location = New Point(279, 511)
         Label8.Name = "Label8"
-        Label8.Size = New Size(527, 23)
+        Label8.Size = New Size(599, 20)
         Label8.TabIndex = 76
         Label8.Text = "Mengembangkan software yang stabil, efisien, dan sesuai kebutuhan pengguna."
         ' 
         ' RoundedButton3
         ' 
-        RoundedButton3.BackColor = Color.FromArgb(CByte(154), CByte(152), CByte(189))
+        RoundedButton3.BackColor = Color.DarkOrange
         RoundedButton3.CornerRadius = 10
         RoundedButton3.FlatStyle = FlatStyle.Popup
         RoundedButton3.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton3.ForeColor = SystemColors.Control
-        RoundedButton3.Location = New Point(29, 376)
+        RoundedButton3.Location = New Point(33, 501)
+        RoundedButton3.Margin = New Padding(3, 4, 3, 4)
         RoundedButton3.Name = "RoundedButton3"
-        RoundedButton3.Size = New Size(206, 32)
+        RoundedButton3.Size = New Size(235, 43)
         RoundedButton3.TabIndex = 75
         RoundedButton3.Text = "SOFTWARE DEVELOPER"
         RoundedButton3.UseVisualStyleBackColor = False
@@ -171,23 +176,24 @@ Partial Class tentangKamiAdmin
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
-        Label7.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(241, 342)
+        Label7.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label7.Location = New Point(275, 456)
         Label7.Name = "Label7"
-        Label7.Size = New Size(507, 23)
+        Label7.Size = New Size(564, 20)
         Label7.TabIndex = 74
         Label7.Text = "Bertanggung jawab menjaga keamanan, integritas, dan performa database."
         ' 
         ' RoundedButton2
         ' 
-        RoundedButton2.BackColor = Color.FromArgb(CByte(86), CByte(82), CByte(133))
+        RoundedButton2.BackColor = Color.RoyalBlue
         RoundedButton2.CornerRadius = 10
         RoundedButton2.FlatStyle = FlatStyle.Popup
         RoundedButton2.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = SystemColors.Control
-        RoundedButton2.Location = New Point(29, 337)
+        RoundedButton2.Location = New Point(33, 449)
+        RoundedButton2.Margin = New Padding(3, 4, 3, 4)
         RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.Size = New Size(206, 32)
+        RoundedButton2.Size = New Size(235, 43)
         RoundedButton2.TabIndex = 73
         RoundedButton2.Text = "DATABASE ADMINISTRATOR"
         RoundedButton2.UseVisualStyleBackColor = False
@@ -196,23 +202,24 @@ Partial Class tentangKamiAdmin
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(241, 306)
+        Label3.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(275, 408)
         Label3.Name = "Label3"
-        Label3.Size = New Size(427, 23)
+        Label3.Size = New Size(485, 20)
         Label3.TabIndex = 72
         Label3.Text = "Ahli dalam logika, algoritma, dan perancangan struktur software."
         ' 
         ' RoundedButton1
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
+        RoundedButton1.BackColor = Color.Red
         RoundedButton1.CornerRadius = 10
         RoundedButton1.FlatStyle = FlatStyle.Popup
         RoundedButton1.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = SystemColors.Control
-        RoundedButton1.Location = New Point(29, 299)
+        RoundedButton1.Location = New Point(33, 399)
+        RoundedButton1.Margin = New Padding(3, 4, 3, 4)
         RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(206, 32)
+        RoundedButton1.Size = New Size(235, 43)
         RoundedButton1.TabIndex = 71
         RoundedButton1.Text = "SENIOR PROGRAMMER"
         RoundedButton1.UseVisualStyleBackColor = False
@@ -221,10 +228,10 @@ Partial Class tentangKamiAdmin
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Poppins", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(29, 269)
+        Label5.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(33, 359)
         Label5.Name = "Label5"
-        Label5.Size = New Size(239, 23)
+        Label5.Size = New Size(301, 20)
         Label5.TabIndex = 70
         Label5.Text = "Daftar profesi dalam sistem SIPIT:"
         ' 
@@ -232,10 +239,10 @@ Partial Class tentangKamiAdmin
         ' 
         Label12.AutoSize = True
         Label12.BackColor = Color.Transparent
-        Label12.Font = New Font("Poppins", 9.75F)
-        Label12.Location = New Point(29, 188)
+        Label12.Font = New Font("Microsoft Sans Serif", 9.75F)
+        Label12.Location = New Point(33, 251)
         Label12.Name = "Label12"
-        Label12.Size = New Size(308, 23)
+        Label12.Size = New Size(339, 20)
         Label12.TabIndex = 67
         Label12.Text = "membantu pengguna mengetahui kecocokan"
         ' 
@@ -243,10 +250,10 @@ Partial Class tentangKamiAdmin
         ' 
         Label15.AutoSize = True
         Label15.BackColor = Color.Transparent
-        Label15.Font = New Font("Poppins", 9.75F)
-        Label15.Location = New Point(29, 231)
+        Label15.Font = New Font("Microsoft Sans Serif", 9.75F)
+        Label15.Location = New Point(33, 308)
         Label15.Name = "Label15"
-        Label15.Size = New Size(272, 23)
+        Label15.Size = New Size(302, 20)
         Label15.TabIndex = 69
         Label15.Text = "pertanyaan kemampuan dan preferensi."
         ' 
@@ -254,10 +261,10 @@ Partial Class tentangKamiAdmin
         ' 
         Label11.AutoSize = True
         Label11.BackColor = Color.Transparent
-        Label11.Font = New Font("Poppins", 9.75F)
-        Label11.Location = New Point(29, 166)
+        Label11.Font = New Font("Microsoft Sans Serif", 9.75F)
+        Label11.Location = New Point(33, 221)
         Label11.Name = "Label11"
-        Label11.Size = New Size(300, 23)
+        Label11.Size = New Size(336, 20)
         Label11.TabIndex = 66
         Label11.Text = "Aplikasi kecerdasan buatan sederhana yang"
         ' 
@@ -265,38 +272,40 @@ Partial Class tentangKamiAdmin
         ' 
         Label14.AutoSize = True
         Label14.BackColor = Color.Transparent
-        Label14.Font = New Font("Poppins", 9.75F)
-        Label14.Location = New Point(29, 209)
+        Label14.Font = New Font("Microsoft Sans Serif", 9.75F)
+        Label14.Location = New Point(33, 279)
         Label14.Name = "Label14"
-        Label14.Size = New Size(313, 23)
+        Label14.Size = New Size(349, 20)
         Label14.TabIndex = 68
         Label14.Text = "profesi IT berdasarkan jawaban dari beberapa"
         ' 
         ' Panel1
         ' 
-        Panel1.Location = New Point(479, 84)
+        Panel1.Location = New Point(547, 112)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(292, 170)
+        Panel1.Size = New Size(334, 227)
         Panel1.TabIndex = 64
         ' 
         ' PictureBox2
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(10, 71)
+        PictureBox2.Location = New Point(11, 95)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(249, 102)
+        PictureBox2.Size = New Size(285, 136)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 65
         PictureBox2.TabStop = False
         ' 
         ' tentangKamiAdmin
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(834, 467)
+        ClientSize = New Size(953, 623)
         Controls.Add(Label9)
         Controls.Add(RoundedButton4)
         Controls.Add(Label8)
@@ -318,6 +327,7 @@ Partial Class tentangKamiAdmin
         Controls.Add(Label2)
         Controls.Add(Button3)
         Controls.Add(Label4)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "tentangKamiAdmin"
         StartPosition = FormStartPosition.CenterScreen
         Text = "tentangKamiAdmin"

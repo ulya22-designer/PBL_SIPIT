@@ -82,14 +82,25 @@ Public Class tentangKami
 
         chartProfesi.Series.Add(series)
 
+        ' ======================================
+        ' DICTIONARY PROFESI → WARNA (FIX SESUAI SISTEM)
+        ' ======================================
+        Dim colorMap As New Dictionary(Of String, Color) From {
+        {"Senior Programmer", Color.Red},
+        {"Database Administrator", Color.RoyalBlue},
+        {"Software Developer", Color.DarkOrange},
+        {"System Analyst", Color.SeaGreen},
+        {"Tidak Diketahui", Color.Gray}
+    }
+
         Using conn As New SqlConnection(connStr)
             conn.Open()
 
             Dim query As String =
-                "SELECT P.nama_profesi, COUNT(H.profesi_id) AS jumlah " &
-                "FROM Hasil_User H " &
-                "LEFT JOIN Profesi P ON H.profesi_id = P.profesi_id " &
-                "GROUP BY P.nama_profesi"
+            "SELECT P.nama_profesi, COUNT(H.profesi_id) AS jumlah " &
+            "FROM Hasil_User H " &
+            "LEFT JOIN Profesi P ON H.profesi_id = P.profesi_id " &
+            "GROUP BY P.nama_profesi"
 
             Using cmd As New SqlCommand(query, conn)
                 Dim rd As SqlDataReader = cmd.ExecuteReader()
@@ -98,12 +109,22 @@ Public Class tentangKami
                     Dim nama As String = rd("nama_profesi").ToString()
                     Dim jumlah As Integer = CInt(rd("jumlah"))
 
-                    series.Points.AddXY(nama, jumlah)
+                    Dim p = series.Points.Add(jumlah)
+                    p.Label = " (" & jumlah & ")"
+                    p.LegendText = nama
+
+                    ' Set warna berdasarkan nama_profesi
+                    If colorMap.ContainsKey(nama) Then
+                        p.Color = colorMap(nama)
+                    Else
+                        p.Color = Color.LightGray  ' fallback
+                    End If
                 End While
             End Using
         End Using
 
     End Sub
+
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim f As New landingPage()
@@ -123,7 +144,4 @@ Public Class tentangKami
         Me.Hide()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class

@@ -44,12 +44,13 @@ Public Class Hasil
     End Sub
 
 
-    ' ===========================================
-    '     PROSES DIAGNOSIS RULE_PATTERN
-    ' ===========================================
+
+    ' ======================================================
+    '   PROSES DIAGNOSIS
+    ' ======================================================
     Private Sub ProsesDiagnosis()
 
-        ' --- 1. Ubah jawaban user menjadi binary pattern string ---
+        ' Convert jawaban user menjadi pola 1010...
         Dim userPattern As String = ""
         For i As Integer = 0 To jawabanUser.Length - 1
             userPattern &= If(jawabanUser(i).ToLower() = "ya", "1", "0")
@@ -66,46 +67,52 @@ Public Class Hasil
             Dim found As Boolean = False
 
             Using cmd As New SqlCommand(query, conn)
-                Dim rd = cmd.ExecuteReader()
+                Using rd As SqlDataReader = cmd.ExecuteReader()
 
-                While rd.Read()
-                    Dim rulePattern As String = rd("rule_pattern").ToString()
+                    While rd.Read()
+                        Dim rulePattern As String = rd("rule_pattern").ToString()
 
-                    If rulePattern = userPattern Then
-                        profesiIdHasil = CInt(rd("profesi_id"))
-                        namaProfesi = rd("nama_profesi").ToString()
-                        keteranganProfesi = rd("Keterangan").ToString()
-                        found = True
-                        Exit While
-                    End If
-                End While
+                        If rulePattern = userPattern Then
+                            profesiIdHasil = CInt(rd("profesi_id"))
+                            namaProfesi = rd("nama_profesi").ToString()
+                            keteranganProfesi = rd("Keterangan").ToString()
+                            found = True
+                            Exit While
+                        End If
+                    End While
+
+                End Using
             End Using
 
-            ' --- Jika tidak ada rule cocok → pakai rule default ---
+            ' Jika tidak ditemukan → pakai default rule
             If Not found Then
+
                 Dim q2 As String =
                     "SELECT TOP 1 A.profesi_id, A.Keterangan, P.nama_profesi
                      FROM Aturan A
                      JOIN Profesi P ON A.profesi_id = P.profesi_id
-                     WHERE A.is_default = 1"
+                     WHERE A.profesi_id = 5"
 
                 Using cmd2 As New SqlCommand(q2, conn)
-                    Dim rd2 = cmd2.ExecuteReader()
+                    Using rd2 As SqlDataReader = cmd2.ExecuteReader()
 
-                    If rd2.Read() Then
-                        profesiIdHasil = CInt(rd2("profesi_id"))
-                        namaProfesi = rd2("nama_profesi").ToString()
-                        keteranganProfesi = rd2("Keterangan").ToString()
-                    Else
-                        profesiIdHasil = -1
-                        namaProfesi = "Tidak Diketahui"
-                        keteranganProfesi = "Sistem tidak dapat menentukan profesi Anda."
-                    End If
+                        If rd2.Read() Then
+                            profesiIdHasil = CInt(rd2("profesi_id"))
+                            namaProfesi = rd2("nama_profesi").ToString()
+                            keteranganProfesi = rd2("Keterangan").ToString()
+                        Else
+                            profesiIdHasil = -1
+                            namaProfesi = "Tidak Diketahui"
+                            keteranganProfesi = "Sistem tidak dapat menentukan profesi Anda."
+                        End If
+
+                    End Using
                 End Using
+
             End If
         End Using
 
-        ' --- UPDATE UI ---
+        ' Update UI
         Label3.Text = namaProfesi
         Label2.Text = keteranganProfesi
         Label2.MaximumSize = New Size(600, 0)
@@ -114,9 +121,10 @@ Public Class Hasil
     End Sub
 
 
-    ' ===========================================
-    '       SIMPAN KE DATABASE
-    ' ===========================================
+
+    ' ======================================================
+    '   SIMPAN KE DATABASE
+    ' ======================================================
     Private Sub SimpanKeDatabase()
         If currentUserId <= 0 Then Exit Sub
 
@@ -137,9 +145,9 @@ Public Class Hasil
 
 
 
-    ' ===========================================
-    '                     CETAK
-    ' ===========================================
+    ' ======================================================
+    '   CETAK — PRINT
+    ' ======================================================
     Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
         Try
             PrintPreviewDialog1.Document = PrintDocument1
@@ -150,10 +158,8 @@ Public Class Hasil
     End Sub
 
 
-    Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
 
-        ' Semua kode cetak TETAP seperti sebelumnya
-        ' Tidak ada yang dihapus
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument1.PrintPage
 
         Dim fKopAtas As New Font("Times New Roman", 15, FontStyle.Bold)
         Dim fKopUtama As New Font("Times New Roman", 15, FontStyle.Bold)
@@ -165,48 +171,53 @@ Public Class Hasil
         Dim centerX As Single = e.PageBounds.Width / 2
         Dim posY As Integer = 35
 
-        ' LOGO
+
+        ' ====================
+        ' LOGO & HEADER
+        ' ====================
         Try
             Dim logo As Image = Image.FromFile("LOGO PNJ FIX 1.png")
             e.Graphics.DrawImage(logo, 55, 28, 120, 120)
         Catch
         End Try
 
-        ' Kop surat
-        Dim kop1 = "KEMENTERIAN PENDIDIKAN TINGGI,"
-        e.Graphics.DrawString(kop1, fKopAtas, Brushes.Black, centerX - e.Graphics.MeasureString(kop1, fKopAtas).Width / 2, posY)
+        e.Graphics.DrawString("KEMENTERIAN PENDIDIKAN TINGGI,", fKopAtas, Brushes.Black,
+                              centerX - 200, posY)
 
         posY += 23
-        Dim kop2 = "SAINS DAN TEKNOLOGI"
-        e.Graphics.DrawString(kop2, fKopAtas, Brushes.Black, centerX - e.Graphics.MeasureString(kop2, fKopAtas).Width / 2, posY)
+        e.Graphics.DrawString("SAINS DAN TEKNOLOGI", fKopAtas, Brushes.Black,
+                              centerX - 155, posY)
 
         posY += 25
-        Dim kop3 = "POLITEKNIK NEGERI JAKARTA"
-        e.Graphics.DrawString(kop3, fKopUtama, Brushes.Black, centerX - e.Graphics.MeasureString(kop3, fKopUtama).Width / 2, posY)
+        e.Graphics.DrawString("POLITEKNIK NEGERI JAKARTA", fKopUtama, Brushes.Black,
+                              centerX - 190, posY)
 
         posY += 25
-        Dim kop4 = "Jalan Prof Dr. G.A. Siwabessy, Kampus UI, Depok 16425"
-        e.Graphics.DrawString(kop4, fKopAlamat, Brushes.Black, centerX - e.Graphics.MeasureString(kop4, fKopAlamat).Width / 2, posY)
+        e.Graphics.DrawString("Jalan Prof Dr. G.A. Siwabessy, Kampus UI, Depok 16425",
+                              fKopAlamat, Brushes.Black, centerX - 230, posY)
 
         posY += 18
-        Dim kop5 = "Telepon (021) 7270036  Faksimile (021) 7270034"
-        e.Graphics.DrawString(kop5, fKopAlamat, Brushes.Black, centerX - e.Graphics.MeasureString(kop5, fKopAlamat).Width / 2, posY)
+        e.Graphics.DrawString("Telepon (021) 7270036  Faksimile (021) 7270034",
+                              fKopAlamat, Brushes.Black, centerX - 210, posY)
 
         posY += 35
         e.Graphics.DrawLine(Pens.Black, 50, posY, e.PageBounds.Width - 50, posY)
 
 
+        ' ====================
         ' JUDUL
+        ' ====================
         posY += 35
-        Dim judul = "Hasil Tes Karir SIPIT"
-        e.Graphics.DrawString(judul, fJudul, Brushes.Black,
-                              centerX - e.Graphics.MeasureString(judul, fJudul).Width / 2, posY)
+        e.Graphics.DrawString("Hasil Tes Karir SIPIT", fJudul, Brushes.Black,
+                              centerX - 120, posY)
 
         posY += 60
         e.Graphics.DrawString("Dicetak pada: " & tanggalCetak, fNormal, Brushes.Black, 100, posY)
 
 
+        ' ====================
         ' IDENTITAS
+        ' ====================
         Dim colLabel = 100
         Dim colColon = 260
         Dim colValue = 280
@@ -229,18 +240,102 @@ Public Class Hasil
         e.Graphics.DrawString(keteranganProfesi, fNormal, Brushes.Black, rectKeterangan)
 
 
-        ' TABEL JAWABAN
-        posY += 80
+        ' ======================================================
+        '           TABEL HASIL SURVEY
+        ' ======================================================
+        posY += 220
 
-        ' (kode tabel tetap, tidak diubah)
-        ' ...
+        Dim fBoldTitle As New Font(fNormal.FontFamily, fNormal.Size, FontStyle.Bold)
+        e.Graphics.DrawString("Tabel Hasil Jawaban Survey:", fBoldTitle, Brushes.Black, 100, posY)
 
-        ' — TIDAK ADA YANG DIHAPUS —
+        posY += 40
+
+        Dim startX As Integer = 100
+        Dim colNo As Integer = 30
+        Dim colPertanyaan As Integer = 460
+        Dim colJawaban As Integer = 200
+        Dim rowHeight As Integer = 40
+        Dim y As Integer = posY
+
+        ' HEADER
+        e.Graphics.DrawRectangle(Pens.Black, startX, y, colNo, rowHeight)
+        e.Graphics.DrawRectangle(Pens.Black, startX + colNo, y, colPertanyaan, rowHeight)
+        e.Graphics.DrawRectangle(Pens.Black, startX + colNo + colPertanyaan, y, colJawaban, rowHeight)
+
+        Dim fBold As New Font("Arial", 10, FontStyle.Bold)
+        Dim fmtHeader As New StringFormat With {
+            .Alignment = StringAlignment.Center,
+            .LineAlignment = StringAlignment.Center
+        }
+
+        e.Graphics.DrawString("No", fBold, Brushes.Black,
+                              New Rectangle(startX, y, colNo, rowHeight), fmtHeader)
+
+        e.Graphics.DrawString("Pertanyaan", fBold, Brushes.Black,
+                              New Rectangle(startX + colNo, y, colPertanyaan, rowHeight), fmtHeader)
+
+        e.Graphics.DrawString("Jawaban", fBold, Brushes.Black,
+                              New Rectangle(startX + colNo + colPertanyaan, y, colJawaban, rowHeight), fmtHeader)
+
+        y += rowHeight
+
+        ' ISI TABEL
+        Dim fmtIsi As New StringFormat With {
+            .Alignment = StringAlignment.Near,
+            .LineAlignment = StringAlignment.Near,
+            .FormatFlags = StringFormatFlags.LineLimit
+        }
+
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+
+            Dim query As String = "SELECT teks_pertanyaan FROM Pertanyaan ORDER BY pertanyaan_id"
+
+            Using cmd As New SqlCommand(query, conn)
+                Using rd As SqlDataReader = cmd.ExecuteReader()
+
+                    Dim idx As Integer = 0
+
+                    While rd.Read() AndAlso idx < jawabanUser.Length
+
+                        Dim teksPertanyaan As String = rd("teks_pertanyaan").ToString()
+                        Dim teksJawaban As String = jawabanUser(idx).ToUpper()
+
+                        Dim rectPertanyaan As New Rectangle(startX + colNo + 5, y + 5, colPertanyaan - 10, 999)
+                        Dim rectJawaban As New Rectangle(startX + colNo + colPertanyaan + 5, y + 5, colJawaban - 10, 999)
+
+                        Dim hPertanyaan = CInt(e.Graphics.MeasureString(teksPertanyaan, fNormal, rectPertanyaan.Width).Height)
+                        Dim hJawaban = CInt(e.Graphics.MeasureString(teksJawaban, fNormal, rectJawaban.Width).Height)
+
+                        Dim tinggiBaris As Integer = Math.Max(rowHeight, Math.Max(hPertanyaan + 10, hJawaban + 10))
+
+                        e.Graphics.DrawRectangle(Pens.Black, startX, y, colNo, tinggiBaris)
+                        e.Graphics.DrawRectangle(Pens.Black, startX + colNo, y, colPertanyaan, tinggiBaris)
+                        e.Graphics.DrawRectangle(Pens.Black, startX + colNo + colPertanyaan, y, colJawaban, tinggiBaris)
+
+                        e.Graphics.DrawString((idx + 1).ToString(), fNormal, Brushes.Black,
+                                              New Rectangle(startX, y, colNo, tinggiBaris), fmtHeader)
+
+                        e.Graphics.DrawString(teksPertanyaan, fNormal, Brushes.Black, rectPertanyaan, fmtIsi)
+
+                        e.Graphics.DrawString(teksJawaban, fNormal, Brushes.Black, rectJawaban, fmtIsi)
+
+                        y += tinggiBaris
+                        idx += 1
+
+                    End While
+
+                End Using
+            End Using
+        End Using
+
     End Sub
 
 
 
-    ' NAVIGASI
+    ' ======================================================
+    '   NAVIGASI
+    ' ======================================================
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
         Dim f As New landingPage()
         f.Show()

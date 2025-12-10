@@ -4,6 +4,7 @@ Imports System.Drawing.Drawing2D
 
 Public Class Riwayat
     Public Property userId As Integer
+
     Private Sub Riwayat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DisableMaximize(Me)
         Me.StartPosition = FormStartPosition.CenterScreen
@@ -34,7 +35,7 @@ Public Class Riwayat
 
 
     ' =====================================================
-    ' LOAD RIWAYAT DARI DATABASE
+    ' LOAD RIWAYAT DENGAN hasil_id (PRIMARY KEY)
     ' =====================================================
     Private Sub LoadRiwayat()
         Try
@@ -43,6 +44,7 @@ Public Class Riwayat
 
                 Dim query As String =
                     "SELECT 
+                        HU.hasil_id,
                         HU.tanggal AS [Tanggal],
                         P.nama_profesi AS [Profesi],
                         P.deskripsi AS [Keterangan]
@@ -76,6 +78,11 @@ Public Class Riwayat
                         DataGridView1.Columns("No").DefaultCellStyle.Alignment =
                             DataGridViewContentAlignment.MiddleCenter
                     End If
+
+                    ' SEMBUNYIKAN hasil_id
+                    If DataGridView1.Columns.Contains("hasil_id") Then
+                        DataGridView1.Columns("hasil_id").Visible = False
+                    End If
                 End Using
             End Using
 
@@ -105,8 +112,9 @@ Public Class Riwayat
     End Sub
 
 
+
     ' =====================================================
-    ' DELETE satu baris + perbaiki nomor ulang
+    ' DELETE dari DB + refresh grid
     ' =====================================================
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
@@ -115,20 +123,50 @@ Public Class Riwayat
             Exit Sub
         End If
 
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim hasilID As Integer
+
+        Try
+            hasilID = CInt(row.Cells("hasil_id").Value)
+        Catch
+            MessageBox.Show("Gagal membaca ID riwayat!")
+            Exit Sub
+        End Try
+
         If MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi",
-                           MessageBoxButtons.YesNo) = DialogResult.Yes Then
-
-            ' hapus row
-            DataGridView1.Rows.Remove(DataGridView1.SelectedRows(0))
-
-            ' perbaiki nomor urut lagi
-            For i As Integer = 0 To DataGridView1.Rows.Count - 1
-                DataGridView1.Rows(i).Cells("No").Value = i + 1
-            Next
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+            Exit Sub
         End If
 
+        ' === HAPUS DI DATABASE ===
+        Try
+            Using conn As New SqlConnection(connStr)
+                conn.Open()
+
+                Dim query As String = "DELETE FROM Hasil_User WHERE hasil_id = @id"
+
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@id", hasilID)
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+
+            MessageBox.Show("Data berhasil dihapus.")
+
+        Catch ex As Exception
+            MessageBox.Show("Gagal menghapus: " & ex.Message)
+        End Try
+
+        ' === REFRESH TAMPILAN ===
+        LoadRiwayat()
+        FormatGrid()
     End Sub
 
+
+
+    ' =====================================================
+    ' NAVIGASI BUTTONS
+    ' =====================================================
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
         Dim f As New Home()
         f.Show()
