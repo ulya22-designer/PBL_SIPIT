@@ -36,9 +36,13 @@ Partial Class Hasil
         RoundedButton2 = New RoundedButton()
         PictureBox2 = New PictureBox()
         PictureBox3 = New PictureBox()
+        Panel1 = New Panel()
+        Panel2 = New Panel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -46,9 +50,9 @@ Partial Class Hasil
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(87, 43)
+        Label1.Location = New Point(76, 32)
         Label1.Name = "Label1"
-        Label1.Size = New Size(110, 25)
+        Label1.Size = New Size(91, 20)
         Label1.TabIndex = 27
         Label1.Text = "Username"
         ' 
@@ -57,9 +61,9 @@ Partial Class Hasil
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(197, 304)
+        Label3.Location = New Point(73, 10)
         Label3.Name = "Label3"
-        Label3.Size = New Size(539, 76)
+        Label3.Size = New Size(424, 61)
         Label3.TabIndex = 29
         Label3.Text = "HASIL PROFESI"
         ' 
@@ -68,9 +72,9 @@ Partial Class Hasil
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
-        Label2.Location = New Point(197, 419)
+        Label2.Location = New Point(198, 19)
         Label2.Name = "Label2"
-        Label2.Size = New Size(188, 29)
+        Label2.Size = New Size(151, 24)
         Label2.TabIndex = 30
         Label2.Text = "KETERANGAN"
         ' 
@@ -91,10 +95,9 @@ Partial Class Hasil
         RoundedButton1.FlatStyle = FlatStyle.Popup
         RoundedButton1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = SystemColors.Control
-        RoundedButton1.Location = New Point(811, 35)
-        RoundedButton1.Margin = New Padding(3, 4, 3, 4)
+        RoundedButton1.Location = New Point(710, 26)
         RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(102, 43)
+        RoundedButton1.Size = New Size(89, 32)
         RoundedButton1.TabIndex = 38
         RoundedButton1.Text = "Logout"
         RoundedButton1.UseVisualStyleBackColor = False
@@ -105,9 +108,9 @@ Partial Class Hasil
         Label6.BackColor = Color.Transparent
         Label6.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label6.Location = New Point(509, 37)
+        Label6.Location = New Point(445, 28)
         Label6.Name = "Label6"
-        Label6.Size = New Size(68, 25)
+        Label6.Size = New Size(56, 20)
         Label6.TabIndex = 37
         Label6.Text = "Home"
         ' 
@@ -117,9 +120,9 @@ Partial Class Hasil
         Label5.BackColor = Color.Transparent
         Label5.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label5.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label5.Location = New Point(706, 37)
+        Label5.Location = New Point(618, 28)
         Label5.Name = "Label5"
-        Label5.Size = New Size(79, 25)
+        Label5.Size = New Size(65, 20)
         Label5.TabIndex = 36
         Label5.Text = "History"
         ' 
@@ -129,18 +132,17 @@ Partial Class Hasil
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Label4.Location = New Point(611, 37)
+        Label4.Location = New Point(535, 28)
         Label4.Name = "Label4"
-        Label4.Size = New Size(69, 25)
+        Label4.Size = New Size(57, 20)
         Label4.TabIndex = 35
         Label4.Text = "About"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(32, 33)
-        PictureBox1.Margin = New Padding(3, 4, 3, 4)
+        PictureBox1.Location = New Point(28, 25)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(48, 44)
+        PictureBox1.Size = New Size(42, 33)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 28
         PictureBox1.TabStop = False
@@ -152,10 +154,9 @@ Partial Class Hasil
         RoundedButton2.FlatStyle = FlatStyle.Popup
         RoundedButton2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = SystemColors.Control
-        RoundedButton2.Location = New Point(349, 539)
-        RoundedButton2.Margin = New Padding(3, 4, 3, 4)
+        RoundedButton2.Location = New Point(319, 400)
         RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.Size = New Size(208, 53)
+        RoundedButton2.Size = New Size(182, 40)
         RoundedButton2.TabIndex = 39
         RoundedButton2.Text = "Cetak Hasil"
         RoundedButton2.UseVisualStyleBackColor = False
@@ -164,10 +165,9 @@ Partial Class Hasil
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(375, 109)
-        PictureBox2.Margin = New Padding(3, 4, 3, 4)
+        PictureBox2.Location = New Point(352, 80)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(147, 177)
+        PictureBox2.Size = New Size(129, 116)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 40
         PictureBox2.TabStop = False
@@ -177,39 +177,59 @@ Partial Class Hasil
         PictureBox3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         PictureBox3.BackColor = Color.Transparent
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(-11, 401)
-        PictureBox3.Margin = New Padding(3, 4, 3, 4)
+        PictureBox3.Location = New Point(-10, 301)
         PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(239, 235)
+        PictureBox3.Size = New Size(209, 176)
         PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox3.TabIndex = 41
         PictureBox3.TabStop = False
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.Controls.Add(Label3)
+        Panel1.Location = New Point(132, 216)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(570, 79)
+        Panel1.TabIndex = 42
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Transparent
+        Panel2.Controls.Add(Label2)
+        Panel2.Location = New Point(132, 301)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(570, 67)
+        Panel2.TabIndex = 43
+        ' 
         ' Hasil
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(953, 623)
+        ClientSize = New Size(834, 467)
         Controls.Add(PictureBox2)
         Controls.Add(RoundedButton2)
         Controls.Add(RoundedButton1)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
-        Controls.Add(Label2)
-        Controls.Add(Label3)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
+        Controls.Add(Panel1)
+        Controls.Add(Panel2)
         Controls.Add(PictureBox3)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "Hasil"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Hasil"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -226,4 +246,6 @@ Partial Class Hasil
     Friend WithEvents RoundedButton2 As RoundedButton
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class
