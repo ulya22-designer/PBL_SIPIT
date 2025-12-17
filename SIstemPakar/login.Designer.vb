@@ -118,9 +118,9 @@ Partial Class login
         Label4.ForeColor = SystemColors.Window
         Label4.Location = New Point(220, 223)
         Label4.Name = "Label4"
-        Label4.Size = New Size(84, 24)
+        Label4.Size = New Size(91, 24)
         Label4.TabIndex = 11
-        Label4.Text = "SIGN IN"
+        Label4.Text = "SIGN UP"
         ' 
         ' Button1
         ' 

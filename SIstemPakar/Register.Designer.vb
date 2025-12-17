@@ -76,7 +76,7 @@ Partial Class Register
         ' Button2
         ' 
         Button2.BackColor = Color.FromArgb(CByte(46), CByte(48), CByte(97))
-        Button2.Font = New Font("Microsoft Sans Serif", 9.0F)
+        Button2.Font = New Font("Microsoft Sans Serif", 9F)
         Button2.ForeColor = Color.White
         Button2.Location = New Point(393, 348)
         Button2.Name = "Button2"
@@ -106,9 +106,9 @@ Partial Class Register
         Label5.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold)
         Label5.Location = New Point(223, 221)
         Label5.Name = "Label5"
-        Label5.Size = New Size(84, 24)
+        Label5.Size = New Size(91, 24)
         Label5.TabIndex = 9
-        Label5.Text = "SIGN IN"
+        Label5.Text = "SIGN UP"
         ' 
         ' Label3
         ' 
@@ -166,7 +166,7 @@ Partial Class Register
         ' 
         TextBox3.BackColor = Color.FromArgb(CByte(249), CByte(234), CByte(255))
         TextBox3.BorderStyle = BorderStyle.None
-        TextBox3.Font = New Font("Segoe UI", 12.0F)
+        TextBox3.Font = New Font("Segoe UI", 12F)
         TextBox3.Location = New Point(3, 18)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(323, 22)
@@ -206,7 +206,7 @@ Partial Class Register
         ' 
         TextBox1.BackColor = Color.FromArgb(CByte(251), CByte(241), CByte(255))
         TextBox1.BorderStyle = BorderStyle.None
-        TextBox1.Font = New Font("Segoe UI", 12.0F)
+        TextBox1.Font = New Font("Segoe UI", 12F)
         TextBox1.Location = New Point(2, 17)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(326, 22)
@@ -239,7 +239,7 @@ Partial Class Register
         RoundedButton1.BackColor = SystemColors.Desktop
         RoundedButton1.CornerRadius = 10
         RoundedButton1.FlatStyle = FlatStyle.Popup
-        RoundedButton1.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = SystemColors.Control
         RoundedButton1.Location = New Point(393, 405)
         RoundedButton1.Name = "RoundedButton1"
@@ -253,7 +253,7 @@ Partial Class Register
         RoundedButton2.BackColor = Color.SlateBlue
         RoundedButton2.CornerRadius = 10
         RoundedButton2.FlatStyle = FlatStyle.Popup
-        RoundedButton2.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = SystemColors.Control
         RoundedButton2.Location = New Point(585, 405)
         RoundedButton2.Name = "RoundedButton2"
